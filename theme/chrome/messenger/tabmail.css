@@ -38,6 +38,11 @@
  * Tabmail Tabs
  */
 
+.tabmail-tabs {
+  background: -moz-linear-gradient(transparent, transparent 50%, rgba(0, 0, 0, 0.07));
+  padding: 3px 0 0;
+}
+
 .tabmail-tab {
   position: relative; /* static doesn't work with overlapping tabs (wrong z-index of the selected tab) */
   -moz-appearance: none;
