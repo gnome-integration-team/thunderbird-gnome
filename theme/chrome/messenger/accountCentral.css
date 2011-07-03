@@ -1,0 +1,191 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is Mozilla Communicator client code, released
+ * March 31, 1998.
+ *
+ * The Initial Developer of the Original Code is
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 1998-1999
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the MPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+/* ===== accountCentral.css ==========================================
+  == Styles for the Messenger Account Central panel.
+  ======================================================================= */
+
+@import url("chrome://messenger/skin/");
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#acctCentralGrid {
+  background-color: -moz-Field;
+  color: -moz-FieldText;
+}
+
+separator {
+  height: 5px;
+}
+
+separator.thin {
+  height: 15px;
+}
+
+/* ::::: rows ::::: */
+
+#acctCentralHeaderRow {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  -moz-padding-start: 10px;
+  -moz-padding-end: 0px;
+  font-size: 180%;
+  font-weight: bold;
+}
+
+.acctCentralRow {
+  -moz-margin-start: 10px;
+  font-size: 125%;
+}
+
+.row-iconic-icon {
+  list-style-image: inherit;
+  -moz-margin-end: 10px;
+}
+
+.acctCentralRowTitleBox {
+  background-color: ButtonFace;
+  border: 1px solid ThreeDDarkShadow;
+  margin: 15px 6px 0px;
+  border-radius: 3px;
+  color: -moz-DialogText;
+  padding-top: 2px;
+  padding-bottom: 0;
+  -moz-padding-start: 8px;
+  -moz-padding-end: 4px;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+/* ::::: links ::::: */
+
+.acctCentralLinkText {
+  cursor: pointer;
+  -moz-padding-start: 45px;
+  margin-top: .55em;
+  margin-bottom: .55em;
+  min-height: 24px; /* icon height */
+}
+
+.acctCentralLinkText:hover {
+  color: -moz-nativehyperlinktext;
+}
+
+.acctCentralLinkText:active {
+  color: -moz-activehyperlinktext;
+}
+
+#ReadMessages label {
+  background: url("chrome://messenger/skin/accountcentral/read-messages.png")  no-repeat !important;
+}
+
+#ReadMessages label:-moz-locale-dir(rtl) {
+  background: url("chrome://messenger/skin/accountcentral/read-messages.png") right no-repeat !important;
+}
+
+#ComposeMessage label {
+  background: url("chrome://messenger/skin/accountcentral/write-message.png")  no-repeat !important;
+}
+
+#ComposeMessage label:-moz-locale-dir(rtl) {
+  background: url("chrome://messenger/skin/accountcentral/write-message.png") right no-repeat !important;
+}
+
+#AccountSettings label {
+  background: url("chrome://messenger/skin/accountcentral/account-settings.png")  no-repeat !important;
+}
+
+#AccountSettings label:-moz-locale-dir(rtl) {
+  background: url("chrome://messenger/skin/accountcentral/account-settings.png") right no-repeat !important;
+}
+
+#CreateAccount label {
+  background: url("chrome://messenger/skin/accountcentral/create-account.png")  no-repeat !important;
+}
+
+#CreateAccount label:-moz-locale-dir(rtl) {
+  background: url("chrome://messenger/skin/accountcentral/create-account.png") right no-repeat !important;
+}
+
+#SearchMessages label {
+  background: url("chrome://messenger/skin/accountcentral/search-messages.png")  no-repeat !important;
+}
+
+#SearchMessages label:-moz-locale-dir(rtl) {
+  background: url("chrome://messenger/skin/accountcentral/search-messages.png") right no-repeat !important;
+}
+
+#CreateFilters label {
+  background: url("chrome://messenger/skin/accountcentral/manage-filters.png")  no-repeat !important;
+}
+
+#CreateFilters label:-moz-locale-dir(rtl) {
+  background: url("chrome://messenger/skin/accountcentral/manage-filters.png") right no-repeat !important;
+}
+
+#OfflineSettings label {
+  background: url("chrome://messenger/skin/accountcentral/offline-settings.png")  no-repeat !important;
+}
+
+#OfflineSettings label:-moz-locale-dir(rtl) {
+  background: url("chrome://messenger/skin/accountcentral/offline-settings.png") right no-repeat !important;
+}
+
+#SubscribeImapFolders label {
+  background: url("chrome://messenger/skin/accountcentral/manage-imap.png")  no-repeat !important;
+}
+
+#SubscribeImapFolders label:-moz-locale-dir(rtl) {
+  background: url("chrome://messenger/skin/accountcentral/manage-imap.png") right no-repeat !important;
+}
+
+#SubscribeNewsgroups label {
+  background: url("chrome://messenger/skin/accountcentral/manage-newsgroups.png")  no-repeat !important;
+}
+
+#SubscribeNewsgroups label:-moz-locale-dir(rtl) {
+  background: url("chrome://messenger/skin/accountcentral/manage-newsgroups.png") right no-repeat !important;
+}
+
+#SubscribeRSS label {
+  background: url("chrome://messenger/skin/accountcentral/manage-rss.png")  no-repeat !important;
+}
+
+#SubscribeRSS label:-moz-locale-dir(rtl) {
+  background: url("chrome://messenger/skin/accountcentral/manage-rss.png") right no-repeat !important;
+}
+

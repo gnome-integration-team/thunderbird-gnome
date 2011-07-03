@@ -1,0 +1,46 @@
+@import url("chrome://messenger/content/multimessageview.css");
+
+/* gnomestripe-specific overrides for multimessageview.css*/
+
+/* mostly it's about CSS colors not being reliable */
+
+body {
+  background-color: white;
+}
+
+.heading.info {
+  color: CaptionText;
+}
+
+.count, .date {
+  color: InactiveCaptionText;
+}
+
+.info,
+.message > .header > .snippet,
+.message > .header > .senders {
+  color: GrayText;
+}
+
+
+/* buttons are always tricky */
+
+
+.button {
+  font: message-box;
+}
+
+.button > .button-box {
+  /* Needed to make the buttons w/o icons the same height as those with icons */
+  min-height: 16px;
+}
+
+.star {
+  width: 12px;
+  height: 12px;
+  margin-right: 0.5em;
+}
+
+.starred .star {
+  background-image: url("chrome://messenger/skin/icons/flag-col.png");
+}
