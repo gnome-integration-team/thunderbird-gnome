@@ -15,6 +15,17 @@ description.error {
   -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar");
 }
 
+/* Toolbar */
+
+.toolbar-primary {
+  -moz-appearance: none;
+  background: url("chrome://messenger/skin/adwaita-toolbar-gradient.png") repeat-x bottom;
+  background-size: 100% 100%;
+  border-top: 1px solid #90908c !important;
+  border-bottom: 1px solid #cececd;
+}
+
+
 toolbar[printpreview="true"] {
   -moz-binding: url("chrome://global/content/printPreviewBindings.xml#printpreviewtoolbar");
 }

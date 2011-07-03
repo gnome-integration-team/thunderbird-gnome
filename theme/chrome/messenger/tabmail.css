@@ -38,96 +38,72 @@
  * Tabmail Tabs
  */
 
-.tabmail-tabs:not(:-moz-lwtheme) {
-  background-image: -moz-linear-gradient(transparent, transparent 50%,
-                    rgba(0, 0, 0, .05) 90%, rgba(0, 0, 0, .1));
-}
-
-.tabmail-tabs[overflow="true"] {
-  -moz-padding-start: 0px;
-}
-
-.tabmail-tabs[overflow="true"] .tabs-left {
-  display: none;
-}
-
-.tabmail-tabs > .tabmail-tab:first-child > .tab-close-button {
-  visibility: collapse;
-}
-
-tabpanels {
-  -moz-appearance: none;
-}
-
-/**
- * Tab
- */
-
 .tabmail-tab {
-  position: static;
+  position: relative; /* static doesn't work with overlapping tabs (wrong z-index of the selected tab) */
   -moz-appearance: none;
-  background: -moz-linear-gradient(hsla(0, 0%, 100%, .2),
-              hsla(0, 0%, 45%, .2) 1px, hsla(0, 0%, 32%, .2) 50%);
-  background-position: -5px -2px;
-  background-repeat: no-repeat;
-  background-size: 200%;
-  margin: 0;
-  padding: 0;
-  -moz-border-image: url(chrome://messenger/skin/icons/tab.png) 4 5 3 6 /
-                     4px 5px 3px 6px repeat stretch;
-  border-radius: 10px 8px 0 0;
+  background-color: transparent;
+  color: inherit;
+  margin: 0 -9px 0 0; /* Negative for overlapping tabs */
+  padding: 0 3px 2px;
   min-height: 25px; /* reserve space for the sometimes hidden close button */
 }
 
-.tabmail-tab:hover {
-  background-image: -moz-linear-gradient(hsla(0, 0%, 100%, .6),
-                    hsla(0, 0%, 100%, .2) 2px, hsla(0, 0%, 75%, .2) 50%);
+/* swapped overlap for RTL locales */
+.tabmail-tab:-moz-locale-dir(rtl) {
+  margin: 0 0 0 -9px; /* Negative for overlapping tabs */
 }
- 
- .tabmail-tab[selected="true"] {
-  font-weight: bold;
-  background-image: -moz-linear-gradient(rgba(255, 255, 255, .8),
-                    rgba(255, 255, 255, .5) 2px, rgba(255, 255, 255, .3) 20%,
-                    rgba(255, 255, 255, 0) 80%),
-                    -moz-linear-gradient(-moz-dialog, -moz-dialog);
+
+.tabmail-tab[selected="true"] {
+  padding: 0 3px 3px; /* Make text bump up a little on the selected tab */
+}
+
+.tabmail-tab:not([selected="true"]) {
+  -moz-border-image: url(tabmail/adwaita-tab-unselected.png) 6 9 1 9 / 6px 9px 1px 9px stretch;
+}
+
+.tabmail-tab[selected="true"] {
+  -moz-border-image: url(tabmail/adwaita-tab.png) 6 9 1 9 / 6px 9px 1px 9px stretch;
+  color: -moz-dialogtext;
+}
+
+/* All the tabs after the selected tab (hack) */
+.tabmail-tab[selected="true"] ~ .tabmail-tab {
+  -moz-border-image: url(tabmail/adwaita-tab-unselected-right.png) 6 9 1 9 / 6px 9px 1px 9px stretch !important;
+}
+
+/* All the tabs after the selected tab (hack) 
+   (image mirrored for RTL locales) */
+.tabmail-tab[selected="true"] ~ .tabmail-tab:-moz-locale-dir(rtl) {
+  -moz-border-image: url(tabmail/adwaita-tab-unselected-right-rtl.png) 6 9 1 9 / 6px 9px 1px 9px stretch !important;
 }
 
 .tabmail-tab[selected="true"]:-moz-lwtheme {
-  background-image: -moz-linear-gradient(rgba(255, 255, 255, .8),
-                    rgba(255, 255, 255, .5) 2px, rgba(255, 255, 255, .3) 20%);
-}
-
-.tabmail-tab:-moz-lwtheme-brighttext:not([selected="true"]) {
-  background-image: -moz-linear-gradient(hsla(0, 0%, 60%, .6),
-                    hsla(0, 0%, 40%, .6) 2px, hsla(0, 0%, 30%, .6) 50%);
-}
-
-.tabmail-tab:-moz-lwtheme-brighttext:not([selected="true"]):hover {
-  background-image: -moz-linear-gradient(hsla(0, 0%, 80%, .6),
-                    hsla(0, 0%, 60%, .6) 2px, hsla(0, 0%, 45%, .6) 50%);
-}
-
-.tabmail-tab:-moz-lwtheme-darktext:not([selected="true"]) {
-  background-image: -moz-linear-gradient(hsla(0, 0%, 100%, .5),
-                    hsla(0, 0%, 60%, .5) 2px, hsla(0, 0%, 45%, .5) 50%);
-}
-
-.tabmail-tab:-moz-lwtheme-darktext:not([selected="true"]):hover {
-  background-image: -moz-linear-gradient(hsla(0, 0%, 100%, .5),
-                    hsla(0, 0%, 80%, .5) 2px, hsla(0, 0%, 60%, .5) 50%);
-}
-
-.tabmail-tab:-moz-lwtheme {
+  background-image: -moz-linear-gradient(rgba(255,255,255,.8) 1px, rgba(255,255,255,.5) 3px, rgba(255,255,255,.3) 32%);
   color: inherit;
-  text-shadow: none;
 }
 
-.tabmail-tab:-moz-lwtheme:not([selected="true"]) {
-  opacity: .85;
+/* Updated tabs (in the background) */
+.tabmail-tab[titlechanged]:not([selected="true"]) {
+  -moz-border-image: url(tabmail/adwaita-tab-unselected-new.png) 6 9 1 9 / 6px 9px 1px 9px stretch !important;
 }
 
-.tab-icon-image,
-.tab-throbber {
+/* All the updated tabs after the selected tab (hack) */
+.tabmail-tab[selected="true"] ~ .tabmail-tab[titlechanged] {
+  -moz-border-image: url(tabmail/adwaita-tab-unselected-new-right.png) 6 9 1 9 / 6px 9px 1px 9px stretch !important;
+}
+
+/* All the updated tabs after the selected tab (hack) 
+   (image mirrored for RTL locales) */
+.tabmail-tab[selected="true"] ~ .tabmail-tab[titlechanged]:-moz-locale-dir(rtl) {
+  -moz-border-image: url(tabmail/adwaita-tab-unselected-new-right-rtl.png) 6 9 1 9 / 6px 9px 1px 9px stretch !important;
+}
+
+.tabmail-tab:focus > .tab-stack {
+  outline: 1px dotted;
+}
+
+.tab-throbber,
+.tab-icon-image {
   width: 16px;
   height: 16px;
   -moz-margin-end: 3px;
@@ -138,9 +114,14 @@ tabpanels {
 }
 
 .tab-throbber {
-  list-style-image: url("chrome://global/skin/icons/loading_16.png") !important;
+  list-style-image: url("tabmail/connecting.png");
   -moz-image-region: auto !important;
 }
+
+.tab-throbber[progress] {
+  list-style-image: url("tabmail/loading.png");
+}
+
 
 .tabmail-tab[type="glodaSearch"] {
   list-style-image: url(moz-icon://stock/gtk-find?size=menu);
