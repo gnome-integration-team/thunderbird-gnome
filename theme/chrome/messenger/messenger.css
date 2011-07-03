@@ -341,3 +341,42 @@ statusbarpanel {
   border: none;
   padding: 0 4px;
 }
+
+/*** Adwaita ***/
+
+#folderPaneHeader {
+  height: 31px; /* Match filter bar */
+}
+
+#folderPaneHeader,
+#threadContentArea,
+#quick-filter-bar,
+#messengerBox > splitter,
+#threadpane-splitter {
+  background: -moz-linear-gradient(white, -moz-dialog 30px, -moz-dialog);
+}
+
+/* Two part hack to add padding to the thread area and have it work w/ filter bar */
+
+#threadContentArea {
+  padding-top: 6px;
+}
+
+#quick-filter-bar {
+  margin-top: -6px;
+}
+
+/* Allow splitters use the gradient specified above */
+
+#messengerBox > splitter,
+#threadpane-splitter {
+  -moz-appearance: none;
+  height: 6px;
+  width: 6px;
+}
+
+/* Message */
+
+#msgHeaderView {
+  background: -moz-linear-gradient(white, appworkspace 30px, appworkspace);
+}
