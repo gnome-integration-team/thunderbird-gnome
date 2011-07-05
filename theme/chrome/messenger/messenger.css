@@ -19,8 +19,7 @@ description.error {
 
 .toolbar-primary {
   -moz-appearance: none;
-  background: url("chrome://messenger/skin/adwaita-toolbar-gradient.png") repeat-x bottom;
-  background-size: 100% 100%;
+  background: -moz-linear-gradient(top, #ababa0, #bbbbb3 13%, #d8d8d6 92%, #e2e2df);
   border-top: 1px solid #90908c !important;
   border-bottom: 1px solid #cececd;
 }
