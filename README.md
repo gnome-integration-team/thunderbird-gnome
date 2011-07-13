@@ -8,8 +8,4 @@ https://github.com/adwaita-firefox-team/adwaita-thunderbird/issues
 
 Help & feedback are both appreciated! ;-)
 
----
-
-### Screenshots
-
 ![Screenshot](adwaita-thunderbird/raw/master/screenshots/screenshot-1.png)
