@@ -1,7 +1,7 @@
 ## GNOME 3 Adwaita theme for Thunderbird
 
 An easy-to-install version of this theme is available at:
-https://addons.mozilla.org/en-US/thunderbird/addon/adwaita/
+https://addons.mozilla.org/en-US/thunderbird/addon/adwaita-thunderbird/
 
 For current issues see:
 https://github.com/adwaita-firefox-team/adwaita-thunderbird/issues
