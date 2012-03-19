@@ -73,6 +73,7 @@ treechildren::-moz-tree-row {
   border: 1px solid transparent;
   min-height: 18px;
   height: 1.3em;
+  height: 1.5em;
 }
 
 treechildren:not(.autocomplete-treebody)::-moz-tree-row(multicol, odd) {
@@ -80,19 +81,22 @@ treechildren:not(.autocomplete-treebody)::-moz-tree-row(multicol, odd) {
 }
 
 treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected) {
-  background-color: -moz-cellhighlight;
+  background-color: #4a90d9;
 }
 
 treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, focus) {
-  background-color: Highlight;
+  background-color: #4a90d9;
 }
 
 treechildren::-moz-tree-row(current, focus) {
-  border: 1px dotted Highlight;
+  border: 1px solid #4a90d9;
 }
 
 treechildren::-moz-tree-row(selected, current, focus) {
+  /*
   border: 1px dotted #F3D982;
+  */
+  border: 1px solid #4a90d9;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-row,
@@ -128,35 +132,35 @@ tree[seltype="text"] > treechildren::-moz-tree-cell-text {
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell(active, selected) {
-  background-color: -moz-cellhighlight;
+  background-color: #4a90d9;
 }
 tree[seltype="cell"] > treechildren::-moz-tree-cell-text(active, selected) {
   color: -moz-cellhighlighttext;
 }
 
 tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected) {
-  background-color: -moz-cellhighlight;
+  background-color: #4a90d9;
   color: -moz-cellhighlighttext;
 }
 
 treechildren::-moz-tree-cell-text(selected, focus) {
-  color: HighlightText;
+  color: white;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell(active, selected, focus) {
-  background-color: Highlight;
+  background-color: #4a90d9;
 }
 
 tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected, focus) {
-  background-color: Highlight;
+  background-color: #4a90d9;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell-text(active, selected, focus) {
-  color: HighlightText;
+  color: white;
 }
 
 tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected, focus) {
-  color: HighlightText;
+  color: white;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell(active, current, focus) {
@@ -185,7 +189,7 @@ treechildren::-moz-tree-line {
 
 tree[seltype="cell"] > treechildren::-moz-tree-line(active, selected, focus),
 treechildren::-moz-tree-line(selected, focus) {
-  border: 1px dotted HighlightText;
+  border: 1px dotted white;
 }
 
 
@@ -202,12 +206,12 @@ treechildren::-moz-tree-separator {
 tree[seltype="cell"] > treechildren::-moz-tree-cell-text(primary, dropOn),
 tree[seltype="text"] > treechildren::-moz-tree-cell-text(primary, dropOn),
 treechildren::-moz-tree-cell-text(primary, dropOn) {
-  background-color: Highlight;
-  color: HighlightText;
+  background-color: #4a90d9;
+  color: white;
 }
 
 treechildren::-moz-tree-drop-feedback {
-  background-color: Highlight;
+  background-color: #4a90d9;
   width: 50px;
   height: 2px;
   -moz-margin-start: 5px;
@@ -381,11 +385,11 @@ treechildren::-moz-tree-cell-text(selected, editing) {
 
 .tree-input {
   -moz-appearance: none;
-  border: 1px solid Highlight;
-  -moz-border-top-colors: Highlight;
-  -moz-border-bottom-colors: Highlight;
-  -moz-border-left-colors: Highlight;
-  -moz-border-right-colors: Highlight;
+  border: 1px solid #4a90d9;
+  -moz-border-top-colors: #4a90d9;
+  -moz-border-bottom-colors: #4a90d9;
+  -moz-border-left-colors: #4a90d9;
+  -moz-border-right-colors: #4a90d9;
   margin: 0;
   -moz-margin-start: -4px;
   padding: 1px;
