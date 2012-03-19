@@ -20,7 +20,6 @@ description.error {
 .toolbar-primary {
   -moz-appearance: none;
   background: -moz-linear-gradient(top, #ababa0, #bbbbb3 13%, #d8d8d6 92%, #e2e2df);
-  border-top: 1px solid #90908c !important;
   border-bottom: 1px solid #cececd;
 }
 
@@ -30,7 +29,10 @@ toolbar[printpreview="true"] {
 }
 
 toolbar:not(.inline-toolbar):not(:-moz-lwtheme) {
+  /*
   -moz-appearance: menubar;
+  */
+  -moz-appearance: none;
 }
 
 #tabbar-toolbar {
