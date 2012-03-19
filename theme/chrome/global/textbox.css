@@ -46,7 +46,9 @@
 /* ::::: textbox ::::: */
 
 textbox {
+  /*
   -moz-appearance: textfield;
+  */
   cursor: text;
   margin: 2px 4px;
   border: 2px solid;
@@ -58,6 +60,17 @@ textbox {
   -moz-padding-start: 4px;
   background-color: -moz-Field;
   color: -moz-FieldText;
+
+  -moz-appearance: none;
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6), 0 1px 1px 0 rgba(0, 0, 0, 0.15) inset;
+}
+
+textbox[focused="true"] {
+  border-color: #729FCF;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6), 0 1px 2px 0 rgba(0, 106, 221, 0.3) inset;
 }
 
 html|*.textbox-input, 

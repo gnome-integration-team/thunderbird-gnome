@@ -166,7 +166,7 @@ sidebarheader .toolbarbutton-text:not([value]) {
 
 #searchInput,
 .remote-gloda-search {
-  padding: 2px;
+  padding: 4px;
 }
 
 #searchInput:-moz-lwtheme:not([focused="true"]),
