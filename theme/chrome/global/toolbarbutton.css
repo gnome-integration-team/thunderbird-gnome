@@ -109,6 +109,7 @@ toolbarbutton[disabled="true"][open="true"] {
 /* ..... checked state ..... */
 
 toolbarbutton[checked="true"] {
+  /*
   border-color: ThreeDShadow ThreeDHighlight ThreeDHighlight ThreeDShadow !important;
   padding-top: 4px !important;
   padding-bottom: 2px !important;
@@ -116,6 +117,10 @@ toolbarbutton[checked="true"] {
   -moz-padding-end: 2px !important;
   background-image: url("chrome://global/skin/toolbar/Lighten.png");
   color: ButtonText !important;
+  */
+  border: 1px solid #898f89;
+  border-radius: 3px;
+  background-image: -moz-linear-gradient(top, #a1a5a1, #d0d0d0);
 }
 
 toolbarbutton[checked="true"]:hover,

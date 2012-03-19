@@ -6,8 +6,14 @@
   -moz-box-orient: vertical;
   visibility: visible !important;
   list-style-image: url("moz-icon://stock/gtk-find?size=menu");
-  margin: 0 0 1px;
-  padding: 0 4px;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  padding-right: 5px !important;
+}
+
+#qfb-show-filter-bar[checked="true"] {
+  border-color: #ccc;
+  background-image: -moz-linear-gradient(top, #ddd 0, #eee 1px, #f2f2f2);
 }
 
 toolbar[iconsize="large"] #qfb-show-filter-bar {
