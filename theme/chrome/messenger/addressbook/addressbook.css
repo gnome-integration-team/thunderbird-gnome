@@ -46,6 +46,11 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
 
+#addressbookWindow:-moz-lwtheme {
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
 /* ::::: primary toolbar buttons ::::: */
 
 .toolbarbutton-1 {
@@ -174,13 +179,14 @@ toolbar[iconsize="small"] #button-abdelete[disabled] {
 }
 
 #abContent {
-  -moz-appearance: toolbox;
+  text-shadow: none;
   background-color: -moz-Dialog;
 }
 
 /* ::::: directory pane adjustments ::::: */
 
 #abDirTreeHeader {
+  border-bottom: 1px solid ThreeDShadow;
 }
 
 #abDirTreeHeader-title {
@@ -206,18 +212,8 @@ treechildren::-moz-tree-image(DirCol, IsRemote-true, IsSecure-true) {
   list-style-image: url("chrome://messenger/skin/addressbook/icons/secure-remote-addrbook.png");
 }
 
-/* Don't use the listbox appearance as that gives us a blue-grey top border
-   that collides with the primary toolbar border */
 #dirTree {
-  -moz-appearance:  none;
-  background-color: -moz-Field;
-  color: -moz-FieldText;
-  -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
-  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
-  -moz-border-right-colors: ThreeDHighlight ThreeDLightShadow;
-  border-left: 1px solid;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid ThreeDShadow;
 }
 
 #dirTree [sortDirection="ascending"],
@@ -228,26 +224,33 @@ treechildren::-moz-tree-image(DirCol, IsRemote-true, IsSecure-true) {
 /* ::::: splitters ::::: */
 
 #dirTree-splitter {
-  border-right: none;
+  -moz-appearance: none;
+  -moz-border-end: 1px solid ThreeDShadow;
+  /* splitter grip area */
+  width: 4px;
+  /* make only the splitter border visible */
+  -moz-margin-start: -4px;
+  /* because of the negative margin needed to make the splitter visible */
+  position: relative;
+  z-index: 10;
 }
 
 #results-splitter {
-  border: none;
-  min-height: 5px;
+  -moz-appearance: none;
+  border-top: 1px solid ThreeDShadow;
+  /* splitter grip area */
+  height: 4px;
+  /* make only the splitter border visible */
+  margin-bottom: -4px;
+  /* because of the negative margin needed to make the splitter visible */
+  position: relative;
+  z-index: 10;
 }
 
 /* ::::: results pane ::::: */
 
-#abResultsTree {
-  -moz-appearance:  none;
-  background-color: -moz-Field;
-  color: -moz-FieldText;
-  -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
-  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
-  -moz-border-right-colors: ThreeDHighlight ThreeDLightShadow;
-  border-left: 1px solid;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
+#GeneratedName {
+  -moz-padding-start: 22px;
 }
 
 treechildren::-moz-tree-image(GeneratedName) {
@@ -260,10 +263,14 @@ treechildren::-moz-tree-image(GeneratedName, MailList) {
   list-style-image: url("chrome://messenger/skin/addressbook/icons/ablist.png");
 }
 
+treechildren::-moz-tree-cell-text(GeneratedName) {
+  -moz-padding-start: 0;
+}
+
 /* ::::: card view pane ::::: */
 
 #CardViewOuterBox {
-  border: 1px solid ThreeDShadow;
+  border-bottom: 1px solid ThreeDShadow;
 }
 
 #CardViewBox {

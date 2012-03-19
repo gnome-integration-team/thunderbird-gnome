@@ -46,6 +46,15 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+#msgcomposeWindow:-moz-lwtheme {
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+#attachmentBucket {
+  width: 15em;
+}
+
 /* ::::: primary toolbar buttons ::::: */
  
 .toolbarbutton-1 {
@@ -222,12 +231,15 @@ toolbar[iconsize="small"] #paste-button[disabled="true"] {
   list-style-image: url("moz-icon://stock/gtk-paste?size=menu&state=disabled");
 }
 
+#priority-button:not(:-moz-lwtheme) > label {
+  color: MenuText;
+}
+
 /* ::::: special toolbar colors ::::: */
 
 #appcontent {
   border-top: 1px solid ThreeDShadow;
-  border-left: 1px solid ThreeDShadow;
-  border-right: 1px solid ThreeDHighlight;
+  border-bottom: 1px solid ThreeDShadow;
 }
 
 #attachmentbucket-sizer {
@@ -240,6 +252,12 @@ toolbar[iconsize="small"] #paste-button[disabled="true"] {
 }
 
 /* ::::: attachment reminder ::::: */
+
+#attachmentNotificationBox > notification > .notification-inner {
+  border: none;
+  border-top: 1px solid ThreeDShadow;
+  border-bottom: 1px solid ThreeDShadow;
+}
 
 #attachmentNotificationBox > notification .messageImage {
   width: 22px;
@@ -268,10 +286,13 @@ toolbar[iconsize="small"] #paste-button[disabled="true"] {
 }
 
 #compose-toolbar-sizer {
-  border-top-width: 1px;
-  border-left: none;
-  border-right: none;
-  -moz-border-top-colors: ThreeDHighlight;
+  -moz-appearance: none;
+  position: relative;
+  z-index: 10;
+  min-height: 0;
+  height: 5px;
+  margin-top: -5px;
+  border-bottom: 1px solid ThreeDShadow;
 }
 
 #msgSubject {
@@ -338,10 +359,18 @@ toolbar[iconsize="small"] #paste-button[disabled="true"] {
 }
 
 #MsgHeadersToolbar {
+  -moz-appearance: toolbar;
+  color: WindowText;
+  text-shadow: none;
   min-height: 132px;
 }
 
 /* ::::: format toolbar ::::: */
+
+#FormatToolbar {
+  -moz-appearance: toolbar;
+  color: WindowText;
+}
 
 toolbarbutton.formatting-button {
   list-style-image: url("chrome://messenger/skin/messengercompose/format-buttons.png");
@@ -480,6 +509,12 @@ toolbarbutton.formatting-button {
 }
 
 /* ..... smiley menu ..... */
+
+#smileButtonMenu .menu-iconic-left {
+  /* Ensure that the smileys are visible even if the Gnome theme says menus
+     shouldn't have icons. */
+  visibility: visible;
+}
 
 #smileySmile > .menu-iconic-left {
   list-style-image: url("chrome://communicator/skin/icons/smileys/smiley-smile.png");
@@ -639,6 +674,12 @@ toolbarbutton.formatting-button {
   background-color: Window;
 }
 
+#sidebar-box sidebarheader {
+  color: -moz-DialogText;
+  text-shadow: none;
+  background-color: -moz-Dialog;
+}
+
 /** Stock icons for the menu items. */
 #menu_NewMessage {
   list-style-image: url("chrome://messenger/skin/addressbook/icons/addressbook-toolbar.png");
@@ -669,4 +710,16 @@ toolbarbutton.formatting-button {
 
 #tasksMenuAddressBook {
   list-style-image: url("chrome://messenger/skin/addressbook/icons/addrbook.png");
+}
+
+#sidebar-splitter {
+  -moz-appearance: none;
+  -moz-border-start: 1px solid ThreeDShadow;
+  /* splitter grip area */
+  width: 5px;
+  /* make only the splitter border visible */
+  -moz-margin-end: -5px;
+  /* because of the negative margin needed to make the splitter visible */
+  position: relative;
+  z-index: 10;
 }

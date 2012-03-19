@@ -38,19 +38,21 @@
  * Tabmail Tabs
  */
 
+#tabs-toolbar {
+  padding: 0;
+}
+
+#tabpanelcontainer:-moz-lwtheme {
+  color: inherit;
+}
+
 .tabmail-tabs {
-  background: -moz-linear-gradient(transparent, transparent 50%, rgba(0, 0, 0, 0.07));
   padding: 3px 0 0;
 }
 
-.tabmail-tab {
-  position: relative; /* static doesn't work with overlapping tabs (wrong z-index of the selected tab) */
-  -moz-appearance: none;
-  background-color: transparent;
-  color: inherit;
-  margin: 0 -9px 0 0; /* Negative for overlapping tabs */
-  padding: 0 3px 2px;
-  min-height: 25px; /* reserve space for the sometimes hidden close button */
+.tabmail-tabs:not(:-moz-lwtheme) {
+  background: -moz-linear-gradient(transparent, transparent 50%, rgba(0, 0, 0, 0.07));
+  -moz-appearance: menubar;
 }
 
 /* swapped overlap for RTL locales */
@@ -66,9 +68,60 @@
   -moz-border-image: url(tabmail/adwaita-tab-unselected.png) 6 9 1 9 / 6px 9px 1px 9px stretch;
 }
 
+tabpanels {
+  -moz-appearance: none;
+  background-color: transparent;
+}
+
+/**
+ * Tab
+ */
+
+.tabmail-tab {
+  /*
+  position: static;
+  -moz-appearance: none;
+  background: -moz-linear-gradient(hsla(0, 0%, 100%, .2),
+              hsla(0, 0%, 45%, .2) 1px, hsla(0, 0%, 32%, .2) 50%);
+  background-position: -5px -2px;
+  background-repeat: no-repeat;
+  background-size: -moz-calc(100% + 11px) -moz-calc(100% + 7px);
+  margin: 0;
+  padding: 0;
+  -moz-border-image: url(chrome://messenger/skin/icons/tab.png) 4 5 3 6 /
+                     4px 5px 3px 6px repeat stretch;
+  border-radius: 10px 8px 0 0;
+  */
+  min-height: 25px; /* reserve space for the sometimes hidden close button */
+
+  /* Adwaita */
+  position: relative; /* static doesn't work with overlapping tabs (wrong z-index of the selected tab) */
+  -moz-appearance: none;
+  background-color: transparent;
+  color: inherit;
+  margin: 0 -9px 0 0; /* Negative for overlapping tabs */
+}
+
+.tabmail-tab:not(:-moz-lwtheme) {
+  color: MenuText;
+}
+
+.tabmail-tab:hover {
+  /*
+  background-image: -moz-linear-gradient(hsla(0, 0%, 100%, .6),
+                    hsla(0, 0%, 100%, .2) 2px, hsla(0, 0%, 75%, .2) 50%);
+  */
+}
+ 
 .tabmail-tab[selected="true"] {
+  color: -moz-DialogText;
+  /*
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.8) 1px,
+                    rgba(255, 255, 255, 0.5) 3px,
+                    rgba(255, 255, 255, 0.3) 32%),
+                    -moz-linear-gradient(-moz-dialog, -moz-dialog);
+  */
   -moz-border-image: url(tabmail/adwaita-tab.png) 6 9 1 9 / 6px 9px 1px 9px stretch;
-  color: -moz-dialogtext;
 }
 
 /* All the tabs after the selected tab (hack) */
@@ -132,11 +185,7 @@
   list-style-image: url(moz-icon://stock/gtk-find?size=menu);
 }
 
-.tabs-bottom {
-  border-bottom: 1px solid threedshadow;
-}
-
-.tabmail-tab > .tab-text {
+.tabmail-tab > .tab-image-middle > .tab-text {
   /* tabmail-tab focus ring */
   border: 1px dotted transparent;
   margin: -1px !important; /* let the border not consume any space, like outline */
@@ -149,7 +198,7 @@
 /* Tab drag and drop */
 .tab-drop-indicator {
   list-style-image: url(chrome://messenger/skin/icons/tabDragIndicator.png);
-  margin-top: -11px;
+  margin-bottom: -11px;
 }
 
 /* In-tab close button */
@@ -221,13 +270,49 @@
 }
 
 .tabs-alltabs-button > .toolbarbutton-menu-dropmarker {
+  -moz-appearance: none !important;
   margin-bottom: -1px;
+  -moz-padding-start: 0 !important;
+  list-style-image: url("chrome://messenger/skin/icons/dropmarker.svg");
+}
+
+.tabs-alltabs-button:hover > .toolbarbutton-menu-dropmarker {
+  list-style-image: url("chrome://messenger/skin/icons/dropmarker-hover.svg");
 }
 
 .tabs-alltabs-button > .toolbarbutton-icon {
   display: none;
+  -moz-margin-end: 0;
 }
 
 .alltabs-item > .menu-iconic-left {
   visibility: visible !important;
+}
+
+/* Content Tabs */
+
+.contentTabToolbox {
+  -moz-appearance: none;
+  height: 0px;
+  border: 0;
+}
+
+.contentTabInstance[disablechrome] .contentTabToolbox {
+  display: none;
+}
+
+.contentTabToolbox:not(:-moz-lwtheme) {
+  border-bottom: 1px solid rgb(105, 105, 105);
+}
+
+.contentTabToolbox:-moz-lwtheme {
+  height: 1px;
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) 50%);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.contentTabToolbar {
+  height: 0px;
+  min-height: 0px;
+  padding: 0;
 }

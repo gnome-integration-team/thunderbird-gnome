@@ -11,17 +11,15 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is DevTools code
+ * The Original Code is Mozilla Thunderbird.
  *
  * The Initial Developer of the Original Code is
- *   Mozilla Corporation
- * Portions created by the Initial Developer are Copyright (C) 2010
+ *   Mozilla Foundation.
+ * Portions created by the Initial Developer are Copyright (C) 2010-2011
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Joe Walker <jwalker@mozilla.com>
- *   Julian Viereck <jviereck@mozilla.com>
- *   Mihai Șucan <mihai.sucan@gmail.com>
+ *   Jim Porter <squibblyflabbetydoo@gmail.com>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -37,85 +35,58 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-body {
-  font-family: sans-serif;
-  font-size: 11px;
-  background: #EEE;
-  color: #000;
+.navbar {
+  -moz-border-end: 2px solid;
+  -moz-border-left-colors: threeDShadow threeDHighlight;
+  -moz-border-right-colors: threeDShadow threeDHighlight;
+  padding: 2px 0;
+  -moz-box-align: center;
+  background-color: -moz-dialog;
 }
 
-#header {
-  padding: 5px;
-  overflow-x:auto;
-  display: block;
+.navbuttons {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-h1 {
-  font-size: 13px;
-  line-height: 15px;
-  padding: 3px 10px;
-  vertical-align: bottom;
-  margin: 0px;
-  background: -moz-linear-gradient(top, #BBB, #999);
-  border-radius: 2px;
-  text-shadow: #FFF 0px 1px 0px;
+.navbuttons .toolbarbutton-text {
+  display: none;
 }
 
-h1 .info {
-  font-size: 11px;
-  line-height: 15px;
-  vertical-align: bottom;
-  float: right;
-  color: #333;
-  padding-right: 3px;
+.back {
+  list-style-image: url("moz-icon://stock/gtk-go-back?size=menu");
 }
 
-.property-table {
-  padding: 2px 5px;
-  background: -moz-linear-gradient(top, #FFF, #F8F8F8);
-  color: #333;
-  width: 100%;
-  max-height: 330px;
-  overflow: auto;
-  display: block;
+.back[disabled="true"] {
+  list-style-image: url("moz-icon://stock/gtk-go-back?size=menu&state=disabled");
 }
 
-.property-name {
-  font-size: 11px;
-  font-weight: bold;
-  color: #000;
-  white-space: nowrap;
-  text-align: right;
-  vertical-align: top;
-  width: 10%;
+.forward {
+  list-style-image: url("moz-icon://stock/gtk-go-forward?size=menu");
 }
 
-.property-value {
-  padding-right: 5px;
-  font-size: 11px;
-  word-wrap: break-word;
-  width: 90%;
+.forward[disabled="true"] {
+  list-style-image: url("moz-icon://stock/gtk-go-forward?size=menu&state=disabled");
 }
 
-div.group {
-  margin-top: 10px;
+.engines .toolbarbutton-icon {
+  width: 16px;
+  height: 16px;
 }
 
-div.group,
-#header {
-  background: #FFF;
-  border-color: #E1E1E1;
-  border-style: solid;
-  border-width: 1px;
-  box-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.2);
-  border-radius: 4px 4px 4px 4px;
+.defaultButton {
+  -moz-appearance: none;
+  list-style-image: url("chrome://messenger/skin/icons/search-favorite.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  background: transparent;
 }
 
-img#responseImageNode {
-  box-shadow: rgba(0,0,0,0.2) 0px 3px 3.5px;
-  max-width: 100%;
-}
-
-#responseImageNodeDiv {
-  padding: 5px;
+.defaultButton[checked="true"] {
+  -moz-image-region: rect(0px 32px 16px 16px);
 }
