@@ -340,7 +340,10 @@ treechildren::-moz-tree-cell-text(subjectCol) {
 }
 
 #threadpane-splitter:not([orient="vertical"]) {
+  /*
   -moz-margin-start: -5px;
+  */
+  -moz-margin-start: 0;
   -moz-margin-end: 0;
 }
 
