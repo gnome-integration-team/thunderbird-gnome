@@ -20,7 +20,9 @@ description.error {
 .toolbar-primary {
   -moz-appearance: none;
   background: -moz-linear-gradient(top, #ababa0, #bbbbb3 13%, #d8d8d6 92%, #e2e2df);
+  /*
   border-bottom: 1px solid #cececd;
+  */
 }
 
 
@@ -61,8 +63,11 @@ menulist > menupopup > menu > .menu-iconic-left {
 .mail-toolbox,
 .contentTabToolbox {
   -moz-appearance: none;
+  /*
   border-bottom: 1px solid threedshadow;
   background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 19px);
+  */
+  background: -moz-linear-gradient(bottom, #a6a6a6 0, #F3F3F3 1px, white) !important;
 }
 
 .mail-toolbox > toolbar,
