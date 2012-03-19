@@ -56,7 +56,9 @@
 
 #folderTree {
   border-bottom: 1px solid ThreeDShadow;
+  /*
   background-color: -moz-OddTreeRow;
+  */
 }
 
 #threadTree {
