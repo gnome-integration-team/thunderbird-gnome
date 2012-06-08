@@ -238,7 +238,6 @@ toolbar[iconsize="small"] #paste-button[disabled="true"] {
 /* ::::: special toolbar colors ::::: */
 
 #appcontent {
-  border-top: 1px solid ThreeDShadow;
   border-bottom: 1px solid ThreeDShadow;
 }
 
@@ -249,6 +248,7 @@ toolbar[iconsize="small"] #paste-button[disabled="true"] {
 
 #attachmentBucketSize {
   color: #888a85;
+  -moz-padding-end: 1px;
 }
 
 /* ::::: attachment reminder ::::: */
@@ -722,4 +722,11 @@ toolbarbutton.formatting-button {
   /* because of the negative margin needed to make the splitter visible */
   position: relative;
   z-index: 10;
+}
+
+menu[command="cmd_attachCloud"] .menu-iconic-left,
+menu[command="cmd_convertCloud"] .menu-iconic-left {
+  /* Ensure that the provider icons are visible even if the Gnome theme says
+     menus shouldn't have icons. */
+  visibility: visible;
 }

@@ -11,15 +11,15 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is aboutSupport.css.
+ * The Original Code is the Instantbird messenging client, released
+ * 2008.
  *
  * The Initial Developer of the Original Code is
- * Mozilla Foundation.
- * Portions created by the Initial Developer are Copyright (C) 2009
+ * Florian QUEZE <florian@instantbird.org>.
+ * Portions created by the Initial Developer are Copyright (C) 2008
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Curtis Bartley <cbartley@mozilla.com>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -35,104 +35,40 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-html {
-  background-color: -moz-Field;
-  color: -moz-FieldText;
-  font: message-box;
+#accountprotocol,
+#accountsummary {
+  overflow: visible;
 }
 
-body {
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+#summarygrid {
+  overflow: auto;
 }
 
-.page-subtitle {
-  margin-bottom: 3em;
+groupbox.collapsable {
+  -moz-user-focus: normal;
 }
 
-.major-section {
-  margin-top: 2em;
-  margin-bottom: 1em;
-  font-size: large;
-  text-align: start;
-  font-weight: bold;
+
+groupbox.collapsable[closed="true"] {
+  border: none;
+  -moz-appearance: none;
 }
 
-table {
-  background-color: -moz-Dialog;
-  color: -moz-DialogText;
-  font: message-box;
-  text-align: start;
-  width: 100%;
-  border: 1px solid ThreeDShadow;
-  border-spacing: 0px;
+groupbox[closed="true"] > .groupbox-body {
+  display: none;
 }
 
-th, td {
-  border: 1px dotted ThreeDShadow;
-  padding: 3px;
+groupbox.collapsable caption .caption-icon {
+  width: 9px;
+  height: 9px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -moz-margin-start: 1px;
+  -moz-margin-end: 3px;
+  background-image: url("chrome://global/skin/tree/twisty-open.png");
 }
 
-thead th {
-  text-align: center;
-}
 
-th {
-  text-align: start;
-  background-color: Highlight;
-  color: HighlightText;
-}
-
-th.column {
-  white-space: nowrap;
-  width: 0px;
-}
-
-td {
-  text-align: start;
-  border-top: 1px dotted ThreeDShadow;
-}
-
-.prefs-table {
-  width: 100%;
-  table-layout: fixed;
-}
-
-.pref-name {
-  width: 70%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.pref-value {
-  width: 30%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-#reset-box {
-  background-color: -moz-Dialog;
-  border: 1px solid ThreeDShadow;
-  color: -moz-DialogText;
-  float: right;
-  margin-top: 2em;
-  margin-bottom: 20px;
-  -moz-margin-start: 20px;
-  -moz-margin-end: 0;
-  padding: 16px;
-  width: 30%;
-}
-
-body[dir="rtl"] > #reset-box {
-  float: left;
-}
-
-#reset-box > h3 {
-  margin-top: 0;
-}
-
-#reset-box > button {
-  display: block;
-  margin: auto;
+groupbox.collapsable[closed="true"] caption .caption-icon {
+  background-image: url("chrome://global/skin/tree/twisty-clsd.png");
 }

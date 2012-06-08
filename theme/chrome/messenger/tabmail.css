@@ -88,7 +88,7 @@ tabpanels {
   background-size: -moz-calc(100% + 11px) -moz-calc(100% + 7px);
   margin: 0;
   padding: 0;
-  -moz-border-image: url(chrome://messenger/skin/icons/tab.png) 4 5 3 6 /
+  -moz-border-image: url(icons/tab.png) 4 5 3 6 /
                      4px 5px 3px 6px repeat stretch;
   border-radius: 10px 8px 0 0;
   */
@@ -103,7 +103,7 @@ tabpanels {
 }
 
 .tabmail-tab:not(:-moz-lwtheme) {
-  color: MenuText;
+  color: -moz-menubartext;
 }
 
 .tabmail-tab:hover {

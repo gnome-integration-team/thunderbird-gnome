@@ -118,7 +118,11 @@ menulist > menupopup > menu > .menu-iconic-left {
 }
 
 toolbar:not(.inline-toolbar) toolbarbutton:not(:-moz-lwtheme) {
-  color: MenuText;
+  color: -moz-menubartext;
+}
+
+toolbar:not(.inline-toolbar) toolbarbutton[disabled="true"]:not(:-moz-lwtheme) {
+  color: GrayText;
 }
 
 toolbarbutton:hover:not([disabled]):not(:-moz-lwtheme) .toolbarbutton-text {
@@ -436,4 +440,18 @@ treechildren::-moz-tree-cell-text {
 
 #msgHeaderView {
   background: -moz-linear-gradient(white, appworkspace 30px, appworkspace);
+=======
+notification[value="addon-install-blocked"],
+notification[value="addon-install-failed"],
+notification[value="addon-install-complete"] {
+  background-image: url("chrome://mozapps/skin/extensions/stripes-info-negative.png"),
+                    -moz-linear-gradient(rgba(255, 255, 255, 0),
+                                         rgba(255, 255, 255, 0.5));
+  background-repeat: repeat-x;
+}
+
+notification[value="addon-install-blocked"] .notification-inner,
+notification[value="addon-install-failed"] .notification-inner,
+notification[value="addon-install-complete"] .notification-inner {
+  border: none;
 }
