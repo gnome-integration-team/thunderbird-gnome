@@ -1,3 +1,7 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 /* ===== messenger.css ==================================================
   == Styles shared throughout the Messenger application.
   ======================================================================= */
@@ -68,6 +72,11 @@ menulist > menupopup > menu > .menu-iconic-left {
   background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 19px);
   */
   background: -moz-linear-gradient(bottom, #a6a6a6 0, #F3F3F3 1px, white) !important;
+}
+
+.mail-toolbox:-moz-lwtheme,
+.contentTabToolbox:-moz-lwtheme {
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 19px);
 }
 
 .mail-toolbox > toolbar,
@@ -169,11 +178,13 @@ sidebarheader .toolbarbutton-text:not([value]) {
 }
 
 #searchInput,
+#IMSearchInput,
 .remote-gloda-search {
   padding: 4px;
 }
 
 #searchInput:-moz-lwtheme:not([focused="true"]),
+#IMSearchInput:-moz-lwtheme:not([focused="true"]),
 .remote-gloda-search:-moz-lwtheme:not([focused="true"]) {
   opacity: .85;
 }
