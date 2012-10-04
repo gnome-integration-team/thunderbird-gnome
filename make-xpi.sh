@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd theme
-zip -r ../adwaita-thunderbird.xpi *
+zip -FS -r ../adwaita-thunderbird.xpi *
 cd -
