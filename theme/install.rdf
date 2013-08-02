@@ -4,10 +4,10 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
   <Description about="urn:mozilla:install-manifest">
-    <em:id>{cd8b5302-0a8e-4fe4-a25c-0db881647b86}</em:id>
+    <em:id>{CD8B5302-0A8E-4FE4-A25C-0DB881647B86}</em:id>
     <em:type>4</em:type>
     <em:name>GNOME-Thunderbird</em:name>
-    <em:version>2.0</em:version>
+    <em:version>17.0</em:version>
     <em:description>GNOME theme for Thunderbird</em:description>
     <em:creator>GNOME Integration Team</em:creator>
     <em:contributor>GNOME Integration Team</em:contributor>
