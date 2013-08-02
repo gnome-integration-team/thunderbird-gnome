@@ -15,6 +15,13 @@ description.error {
   color: #FF0000;
 }
 
+#navigation-toolbox {
+  -moz-appearance: none;
+  background-color: Window;
+  border-top: none;
+  border-bottom: 1px solid #a7aba7;
+}
+
 .toolbar-primary {
   -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar");
 }
@@ -23,13 +30,40 @@ toolbar[printpreview="true"] {
   -moz-binding: url("chrome://global/content/printPreviewBindings.xml#printpreviewtoolbar");
 }
 
-toolbar:not(.inline-toolbar):not(:-moz-lwtheme) {
+toolbar:not(.inline-toolbar) {
   -moz-appearance: menubar;
+}
+
+toolbar:not(#mail-toolbar-menubar2) {
+  -moz-appearance: none;
+}
+
+#navigation-toolbox > toolbar:not(#mail-toolbar-menubar2):not(#tabs-toolbar) {
+  border-top: 1px solid #a7aba7 !important;
+}
+#navigation-toolbox > toolbar:not(#mail-toolbar-menubar2):not(#tabs-toolbar)[collapsed="false"] ~ toolbar {
+  border-top: 0 !important;
+}
+
+#tabs-toolbar {
+  -moz-binding: url(chrome://global/content/bindings/toolbar.xml#toolbar-drag);
+  margin-bottom: -1px;
+  padding: 0 3px !important;
+}
+
+#tabs-toolbar > #tabcontainer {
+  -moz-appearance: none;
+  background: transparent !important;
 }
 
 #tabbar-toolbar {
   -moz-appearance: none;
   padding: 0;
+}
+
+#mail-bar3 {
+  background: linear-gradient(to bottom, #fff, #f3f3f3);
+  margin: 0;
 }
 
 #tabbar-toolbar[customizing="true"] {
