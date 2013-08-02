@@ -1,41 +1,8 @@
 /*
 # -*- Mode: Java; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 4 -*-
-# ***** BEGIN LICENSE BLOCK *****
-# Version: MPL 1.1/GPL 2.0/LGPL 2.1
-#
-# The contents of this file are subject to the Mozilla Public License Version
-# 1.1 (the "License"); you may not use this file except in compliance with
-# the License. You may obtain a copy of the License at
-# http://www.mozilla.org/MPL/
-#
-# Software distributed under the License is distributed on an "AS IS" basis,
-# WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
-# for the specific language governing rights and limitations under the
-# License.
-#
-# The Original Code is the Firefox Preferences System.
-#
-# The Initial Developer of the Original Code is
-# Scott MacGregor.
-# Portions created by the Initial Developer are Copyright (C) 2005
-# the Initial Developer. All Rights Reserved.
-#
-# Contributor(s):
-#   Scott MacGregor <mscott@mozilla.org>
-#
-# Alternatively, the contents of this file may be used under the terms of
-# either the GNU General Public License Version 2 or later (the "GPL"), or
-# the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
-# in which case the provisions of the GPL or the LGPL are applicable instead
-# of those above. If you wish to allow use of your version of this file only
-# under the terms of either the GPL or the LGPL, and not to allow others to
-# use your version of this file under the terms of the MPL, indicate your
-# decision by deleting the provisions above and replace them with the notice
-# and other provisions required by the GPL or the LGPL. If you do not delete
-# the provisions above, a recipient may use your version of this file under
-# the terms of any one of the MPL, the GPL or the LGPL.
-#
-# ***** END LICENSE BLOCK *****
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
 /* Global Styles */
@@ -48,6 +15,9 @@ radio[pane=paneDisplay] {
 }
 radio[pane=paneCompose] {
   list-style-image: url("chrome://messenger/skin/preferences/composition.png");
+}
+radio[pane=paneChat] {
+  list-style-image: url("chrome://messenger/skin/preferences/chat.png"); /*FIXME*/
 }
 radio[pane=paneSecurity] {
   list-style-image: url("chrome://messenger/skin/preferences/security.png");
@@ -90,4 +60,149 @@ radio[pane=paneAdvanced] {
 
 #tagList:focus > listitem[selected="true"] {
   color: HighlightText !important;
+}
+
+/* Chat */
+#timeBeforeAway {
+  width: 4em;
+}
+
+/* Quota meter in Folder Properties */
+
+#quotaPercentageBar {
+  -moz-appearance: none;
+  border: 1px solid ThreeDShadow;
+}
+
+#quotaPercentageBar > .progress-bar {
+  -moz-appearance: none;
+  background-color: #88AAFF;
+  opacity: .5;
+}
+
+/* Attachments */
+
+body {
+  font: message-box;
+}
+
+a {
+  color: -moz-nativehyperlinktext;
+  text-decoration: underline;
+}
+
+/* Making sure there is some spacing between elements */
+
+#provider-header {
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+  height: 50px;
+}
+
+#provider-name {
+  padding: 0;
+  margin: 0;
+  margin-right: 120px;
+}
+
+#provider-name h1 {
+  font-size: large;
+}
+
+#provider-name h2 {
+  font: message-box;
+}
+
+#provider-terms {
+  float: right;
+  width: 110px;
+}
+
+#provider-terms a {
+  font-size: small;
+  display: block;
+  margin-bottom: 5px;
+  text-align: right;
+}
+
+#provider-space {
+  text-align: right;
+  margin-right: 190px;
+  margin-top: 50px;
+  height: 100px;
+}
+
+#cloudFileView {
+  width: 150px;
+  overflow: hidden;
+}
+
+#upgrade {
+  margin-top: 1em;
+}
+
+#provider-space-visuals {
+  width: 150px;
+  height: 150px;
+  float: right;
+}
+
+#provider-account-settings {
+  text-align: right;
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+}
+
+.space-swatch {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 1px solid rgba(0,0,0,0.5);
+  border-radius: 2px;
+  -moz-margin-start: 0.5ch;
+  -moz-box-sizing: border-box;
+}
+
+/* Main pane padding */
+
+#provider-management {
+  margin: 0 10px;
+}
+
+#provider-name h1 {
+  margin: 0;
+}
+
+/* Loading panel */
+#cloudFileLoadingPanel, #cloudFileDefaultPanel {
+  text-align: center;
+  padding-top: 150px;
+}
+
+/* Flexing */
+#provider-management {
+  display: block;
+  -moz-box-orient: vertical;
+}
+
+#provider-space label {
+  -moz-margin-end: 0.5ch;
+  vertical-align: middle;
+}
+
+#provider-space span {
+  vertical-align: middle;
+}
+
+#provider-header {
+  -moz-box-flex: 0;
+}
+
+#provider-spacebox {
+  -moz-box-flex: 1;
+}
+
+#provider-account-settings {
+  -moz-box-flex: 0;
 }

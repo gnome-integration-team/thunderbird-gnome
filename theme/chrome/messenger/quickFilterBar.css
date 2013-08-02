@@ -1,32 +1,25 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 @import url("chrome://messenger/content/quickFilterBar.css");
 
 /* :::: Filter Tab Bar Button :::: */
 
 #qfb-show-filter-bar {
-  list-style-image: url("chrome://messenger/skin/icons/filter.png");
-  -moz-border-start: 2px solid;
-  -moz-border-end: none;
-  -moz-border-left-colors: rgba(0,0,0,0.25) rgba(255,255,255,0.15);
-  -moz-border-right-colors: rgba(0,0,0,0.25) rgba(255,255,255,0.15);
-  margin: 0 0 1px;
-  padding: 0 4px;
+  list-style-image: url("moz-icon://stock/gtk-find?size=menu");
 }
 
-#qfb-show-filter-bar:hover {
-  background-color: rgba(0,0,0,0.10);
+toolbar[iconsize="large"] #qfb-show-filter-bar {
+  list-style-image: url("moz-icon://stock/gtk-find?size=toolbar");
 }
 
-#qfb-show-filter-bar:hover:active,
-#qfb-show-filter-bar[checked] {
-  background-color: rgba(0,0,0,0.20);
+#qfb-show-filter-bar[disabled="true"] {
+  list-style-image: url("moz-icon://stock/gtk-find?size=menu&state=disabled");
 }
 
-#qfb-show-filter-bar > .toolbarbutton-icon {
-  padding: 0 3px;
-}
-
-#qfb-show-filter-bar > .toolbarbutton-text {
-  display: none;
+toolbar[iconsize="large"] #qfb-show-filter-bar[disabled="true"] {
+  list-style-image: url("moz-icon://stock/gtk-find?size=toolbar&state=disabled");
 }
 
 /* :::: Filter Bar :::: */

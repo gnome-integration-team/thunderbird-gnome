@@ -1,3 +1,7 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 /* ===== messenger.css ==================================================
   == Styles shared throughout the Messenger application.
   ======================================================================= */
@@ -11,22 +15,60 @@ description.error {
   color: #FF0000;
 }
 
+#navigation-toolbox {
+  -moz-appearance: none;
+  background-color: Window;
+  border-top: none;
+  border-bottom: 1px solid #a7aba7;
+}
+
 .toolbar-primary {
   -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar");
 }
 
-/* Toolbar */
-
-.toolbar-primary {
-  -moz-appearance: none;
-  background: -moz-linear-gradient(top, #ababa0, #bbbbb3 13%, #d8d8d6 92%, #e2e2df);
-  border-top: 1px solid #90908c !important;
-  border-bottom: 1px solid #cececd;
-}
-
-
 toolbar[printpreview="true"] {
   -moz-binding: url("chrome://global/content/printPreviewBindings.xml#printpreviewtoolbar");
+}
+
+toolbar:not(.inline-toolbar) {
+  -moz-appearance: menubar;
+}
+
+toolbar:not(#mail-toolbar-menubar2) {
+  -moz-appearance: none;
+}
+
+#navigation-toolbox > toolbar:not(#mail-toolbar-menubar2):not(#tabs-toolbar) {
+  border-top: 1px solid #a7aba7 !important;
+}
+#navigation-toolbox > toolbar:not(#mail-toolbar-menubar2):not(#tabs-toolbar)[collapsed="false"] ~ toolbar {
+  border-top: 0 !important;
+}
+
+#tabs-toolbar {
+  -moz-binding: url(chrome://global/content/bindings/toolbar.xml#toolbar-drag);
+  margin-bottom: -1px;
+  padding: 0 3px !important;
+}
+
+#tabs-toolbar > #tabcontainer {
+  -moz-appearance: none;
+  background: transparent !important;
+}
+
+#tabbar-toolbar {
+  -moz-appearance: none;
+  padding: 0;
+}
+
+#mail-bar3 {
+  background: linear-gradient(to bottom, #fff, #f3f3f3);
+  margin: 0;
+}
+
+#tabbar-toolbar[customizing="true"] {
+  min-width: 16px;
+  min-height: 10px;
 }
 
 /*
@@ -40,6 +82,25 @@ menulist > menupopup > menu > .menu-iconic-left {
   display: -moz-box;
 }
 
+/* ::::: Mail Toolbars and Menubars ::::: */
+
+.mail-toolbox,
+.contentTabToolbox {
+  -moz-appearance: none;
+  border-bottom: 1px solid threedshadow;
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 19px);
+}
+
+.mail-toolbox:-moz-lwtheme,
+.contentTabToolbox:-moz-lwtheme {
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 19px);
+}
+
+.mail-toolbox > toolbar,
+.contentTabToolbox > toolbar {
+  -moz-appearance: none;
+  background: transparent;
+}
 
 /* ::::: throbber ::::: */
 
@@ -82,6 +143,23 @@ menulist > menupopup > menu > .menu-iconic-left {
   -moz-padding-end: 5px;
 }
 
+toolbar:not(.inline-toolbar) toolbarbutton:not(:-moz-lwtheme) {
+  color: -moz-menubartext;
+}
+
+toolbar:not(.inline-toolbar) toolbarbutton[disabled="true"]:not(:-moz-lwtheme) {
+  color: GrayText;
+}
+
+toolbarbutton:hover:not([disabled]):not(:-moz-lwtheme) .toolbarbutton-text {
+  color: -moz-buttonhovertext;
+}
+
+toolbarbutton:hover:active:not([disabled]):not(:-moz-lwtheme) .toolbarbutton-text,
+toolbarbutton[open="true"]:not(:-moz-lwtheme) {
+  color: ButtonText;
+}
+
 .toolbarbutton-1:hover:active:not([disabled]),
 .toolbarbutton-1[open="true"],
 .toolbarbutton-menubutton-button:hover:active:not([disabled]),
@@ -116,12 +194,21 @@ sidebarheader .toolbarbutton-text:not([value]) {
   display: none;
 }
 
-#searchInput {
+#searchInput,
+#IMSearchInput,
+.remote-gloda-search {
   padding: 2px;
 }
 
-#searchInput:-moz-lwtheme:not([focused="true"]) {
+#searchInput:-moz-lwtheme:not([focused="true"]),
+#IMSearchInput:-moz-lwtheme:not([focused="true"]),
+.remote-gloda-search:-moz-lwtheme:not([focused="true"]) {
   opacity: .85;
+}
+
+.remote-gloda-search-container {
+  padding-top: 3px;
+  padding-bottom: 2px;
 }
 
 /* Stock icons for the menu bar items */
@@ -337,45 +424,24 @@ menuitem[command="cmd_goForward"][disabled]:-moz-locale-dir(rtl) {
 
 statusbarpanel {
   -moz-appearance: none !important;
+  border: none !important;
+}
+
+treechildren::-moz-tree-cell-text {
+  -moz-padding-start: 5px;
+}
+
+notification[value="addon-install-blocked"],
+notification[value="addon-install-failed"],
+notification[value="addon-install-complete"] {
+  background-image: url("chrome://mozapps/skin/extensions/stripes-info-negative.png"),
+                    -moz-linear-gradient(rgba(255, 255, 255, 0),
+                                         rgba(255, 255, 255, 0.5));
+  background-repeat: repeat-x;
+}
+
+notification[value="addon-install-blocked"] .notification-inner,
+notification[value="addon-install-failed"] .notification-inner,
+notification[value="addon-install-complete"] .notification-inner {
   border: none;
-  padding: 0 4px;
-}
-
-/*** Adwaita ***/
-
-#folderPaneHeader {
-  height: 31px; /* Match filter bar */
-}
-
-#folderPaneHeader,
-#threadContentArea,
-#quick-filter-bar,
-#messengerBox > splitter,
-#threadpane-splitter {
-  background: -moz-linear-gradient(white, -moz-dialog 30px, -moz-dialog);
-}
-
-/* Two part hack to add padding to the thread area and have it work w/ filter bar */
-
-#threadContentArea {
-  padding-top: 6px;
-}
-
-#quick-filter-bar {
-  margin-top: -6px;
-}
-
-/* Allow splitters use the gradient specified above */
-
-#messengerBox > splitter,
-#threadpane-splitter {
-  -moz-appearance: none;
-  height: 6px;
-  width: 6px;
-}
-
-/* Message */
-
-#msgHeaderView {
-  background: -moz-linear-gradient(white, appworkspace 30px, appworkspace);
 }
