@@ -1,0 +1,61 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== filterDialog.css ===============================================
+  == Styles for the Mail Filters dialog.
+  ======================================================================= */
+
+@import url("chrome://messenger/skin/");
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: columns :::::: */
+
+listcell[enabled="false"] {
+  list-style-image: url("chrome://messenger/skin/icons/notchecked.gif");
+}
+
+listcell[enabled="true"] {
+  list-style-image: url("chrome://messenger/skin/icons/check.gif");
+}
+
+#FilterEditor {
+  padding-top: 1px;
+  -moz-padding-start: 0;
+  -moz-padding-end: 0;
+}
+
+.small-button {
+  min-width: 3em;
+  padding: 0px;
+  margin: 0px 1px;
+}
+
+listbox {
+  padding-top: 2px;
+}
+
+.search-menulist, .search-value-menulist {
+  width: 12em;
+}
+
+.search-menulist[unavailable="true"] {
+  color: GrayText;
+}
+
+textbox {
+  margin: 1px 4px;
+}
+
+.filler {
+  -moz-padding-end: 22px;
+}
+
+.ruleactionitem {
+  min-width: 20em;
+}
+
+.ruleaction-type {
+  min-width: 15em;
+}

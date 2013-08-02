@@ -1,0 +1,45 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+.editContactPanel_rowLabel {
+  text-align: end;
+}
+
+#editContactPanel {
+  -moz-appearance: menupopup;
+  color: MenuText;
+  padding: 4px;
+}
+
+#editContactPanelIcon {
+  list-style-image: url("chrome://messenger/skin/starred48.png");
+  width: 48px;
+  height: 48px;
+}
+
+#editContactPanelTitle {
+  font-size: 130%;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  -moz-margin-start: 9px;
+  -moz-margin-end: 12px;
+}
+
+#editContactEmail {
+  min-width: 20em;
+}
+
+#contactMoveDisabledText {
+  margin-top: 8px;
+  margin-bottom: 5px;
+  width: 20em;
+}
+
+#editContactAddressBookList[disabled="true"] {
+  color: GrayText !important;
+}

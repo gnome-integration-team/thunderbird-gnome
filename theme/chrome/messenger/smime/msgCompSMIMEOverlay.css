@@ -1,0 +1,64 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== msgCompSMIMEOverlay.css ========================================
+  == Styles for the S/Mime in composer window.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#button-security {
+  list-style-image: url("chrome://messenger/skin/messengercompose/compose-toolbar.png");
+  -moz-image-region: rect(154px 22px 176px 0px);
+}
+
+#button-security[disabled="true"] {
+  -moz-image-region: rect(132px 22px 154px 0px);
+}
+
+
+toolbar[iconsize="small"] #button-security {
+  list-style-image: url("chrome://messenger/skin/messengercompose/compose-toolbar-small.png");
+  -moz-image-region: rect(112px 16px 128px 0px);
+}
+
+toolbar[iconsize="small"] #button-security[disabled] {
+  -moz-image-region: rect(96px 16px 112px 0px);
+}
+
+#msgcomposeWindow #signing-status {
+  list-style-image: none;
+  visibility: collapse;
+}
+
+#msgcomposeWindow[signing="ok"] #signing-status {
+  list-style-image: url("chrome://messenger/skin/smime/icons/sbSignOk.png");
+  visibility: visible;
+}
+
+#msgcomposeWindow[signing="notok"] #signing-status {
+  list-style-image: url("chrome://messenger/skin/smime/icons/sbSignNotOk.png");
+  visibility: visible;
+}
+
+#msgcomposeWindow #encryption-status {
+  list-style-image: none;
+  visibility: collapse;
+}
+
+#msgcomposeWindow[crypto="ok"] #encryption-status {
+  list-style-image: url("chrome://messenger/skin/smime/icons/sbCryptoOk.png");
+  visibility: visible;
+}
+
+#msgcomposeWindow[crypto="notok"] #encryption-status {
+  list-style-image: url("chrome://messenger/skin/smime/icons/sbCryptoNotOk.png");
+  visibility: visible;
+}
+
+/* Stock icons for the menu bar items. */
+#menu_viewSecurityStatus,
+#menu_securityStatus2 {
+  list-style-image: url("moz-icon://stock/gtk-info?size=menu");
+}

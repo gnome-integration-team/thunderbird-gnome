@@ -1,0 +1,51 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== messageWindow.css ==============================================
+  == Styles for the message window.
+  ======================================================================= */
+
+@import url("chrome://messenger/skin/");
+@import url("chrome://messenger/skin/primaryToolbar.css");
+@import url("chrome://global/skin/toolbar.css");
+@import url("chrome://messenger/skin/tagColors.css");
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#messagepanebox {
+  text-shadow: none;
+}
+
+/* ..... message pane adjustments ..... */
+
+#messagepanebox {
+  border-bottom: 1px solid ThreeDShadow;
+}
+
+/* ..... splitter adjustments ..... */
+
+#attachment-splitter {
+  -moz-appearance: none;
+  border-bottom: 1px solid ThreeDShadow;
+  /* splitter grip area */
+  height: 5px;
+  /* make only the splitter border visible */
+  margin-top: -5px;
+  /* because of the negative margin needed to make the splitter visible */
+  position: relative;
+  z-index: 10;
+  -moz-transition: border-width .3s ease-in;
+}
+
+#attachment-splitter:not([state="collapsed"]) {
+  border-bottom: 1px solid transparent;
+}
+
+#attachment-splitter {
+  -moz-transition: border-color .3s;
+}
+
+#attachment-splitter[state="collapsed"]:hover {
+  border-bottom: 4px solid highlight;
+}

@@ -1,0 +1,110 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import url("chrome://messenger/content/quickFilterBar.css");
+
+/* :::: Filter Tab Bar Button :::: */
+
+#qfb-show-filter-bar {
+  list-style-image: url("moz-icon://stock/gtk-find?size=menu");
+}
+
+toolbar[iconsize="large"] #qfb-show-filter-bar {
+  list-style-image: url("moz-icon://stock/gtk-find?size=toolbar");
+}
+
+#qfb-show-filter-bar[disabled="true"] {
+  list-style-image: url("moz-icon://stock/gtk-find?size=menu&state=disabled");
+}
+
+toolbar[iconsize="large"] #qfb-show-filter-bar[disabled="true"] {
+  list-style-image: url("moz-icon://stock/gtk-find?size=toolbar&state=disabled");
+}
+
+/* :::: Filter Bar :::: */
+
+#threadTree[filterActive="matches"] {
+  outline: 1px solid #4e9a06;
+}
+
+#threadTree[filterActive="nomatches"] {
+  outline: 1px solid #cc0000;
+}
+
+/* :::: Filter Buttons :::: */
+
+#quick-filter-bar #qfb-sticky,
+#quick-filter-bar #qfb-sticky[checked] {
+  background: none;
+  border-width: 0;
+  -moz-border-image: none;
+}
+
+#qfb-sticky {
+  list-style-image: url("chrome://messenger/skin/icons/black_pin.png");
+}
+
+#qfb-sticky[checked] {
+  list-style-image: url("chrome://messenger/skin/icons/red_pin.png");
+}
+
+/* we use both IDs so we are more precise than the other # toolbarbutton rules */
+#quick-filter-bar #qfb-sticky:hover {
+  text-shadow: none;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  border-width: 0;
+}
+
+
+#qfb-closebutton {
+  list-style-image: url("chrome://global/skin/icons/closeSidebar.png");
+  -moz-image-region: rect(0px, 14px, 14px, 0px);
+}
+
+#qfb-unread {
+  list-style-image: url("chrome://messenger/skin/icons/filterbar.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#qfb-starred {
+  list-style-image: url("chrome://messenger/skin/icons/filterbar.png");
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+.qfb-starred-nostar {
+  list-style-image: url("chrome://messenger/skin/starContact.png");
+  -moz-image-region:rect(0px 32px 16px 16px);
+}
+
+#qfb-inaddrbook {
+  list-style-image: url("chrome://messenger/skin/icons/filterbar.png");
+  -moz-image-region: rect(0px, 48px, 16px, 32px);
+}
+
+#qfb-tags {
+  list-style-image: url("chrome://messenger/skin/icons/filterbar.png");
+  -moz-image-region: rect(0px, 64px, 16px, 48px);
+}
+
+#qfb-attachment {
+  list-style-image: url("chrome://messenger/skin/icons/filterbar.png");
+  -moz-image-region: rect(0px, 80px, 16px, 64px);
+}
+
+#qfb-results-label {
+  color: GrayText;
+}
+
+#quick-filter-bar[filterActive="matches"] #qfb-results-label {
+  color: #4e9a06;
+}
+
+#quick-filter-bar[filterActive="nomatches"] #qfb-results-label {
+  color: #cc0000;
+}
+
+#qfb-qs-textbox {
+}
