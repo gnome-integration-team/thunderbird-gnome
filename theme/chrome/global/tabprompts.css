@@ -1,3 +1,7 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 /* Tab Modal Prompt boxes */
 tabmodalprompt {
   background-image: url(chrome://global/skin/icons/tabprompts-bgtexture.png);
@@ -6,11 +10,10 @@ tabmodalprompt {
 }
 
 .mainContainer {
-  color: black;
-  background-color: white;
-  background-clip: padding-box;
+  color: -moz-fieldText;
+  background-color: -moz-field;
   border-radius: 2px;
-  border: 1px solid hsla(0,0%,0%,.5);
+  border: 1px solid threeDDarkShadow;
 }
 
 .topContainer {

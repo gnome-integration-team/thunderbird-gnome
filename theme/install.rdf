@@ -5,24 +5,42 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>{CD8B5302-0A8E-4FE4-A25C-0DB881647B86}</em:id>
-    <em:version>1.0.1</em:version>
+    <em:type>4</em:type>
+    <em:name>GNOME-Thunderbird</em:name>
+    <em:version>17.0</em:version>
+    <em:description>GNOME theme for Thunderbird</em:description>
+    <em:creator>GNOME Integration Team</em:creator>
+    <em:contributor>GNOME Integration Team</em:contributor>
+    <em:internalName>Adwaita</em:internalName>
 
-    <!-- Target Application this extension can install into,
-         with minimum and maximum supported versions. -->
+    <em:localized>
+      <Description em:locale="cs">
+        <em:name>GNOME</em:name>
+        <em:description>Motiv GNOME pro Thunderbird</em:description>
+      </Description>
+    </em:localized>
+
+    <em:localized>
+      <Description em:locale="pl">
+        <em:name>GNOME</em:name>
+        <em:description>Motyw GNOME dla Thunderbird</em:description>
+      </Description>
+    </em:localized>
+
+    <em:localized>
+      <Description em:locale="ru-RU">
+        <em:name>GNOME</em:name>
+        <em:description>Тема GNOME для Thunderbird</em:description>
+      </Description>
+    </em:localized>
+
     <em:targetApplication>
       <Description>
         <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
-        <em:minVersion>5.0</em:minVersion>
-        <em:maxVersion>9.0a1</em:maxVersion>
+        <em:minVersion>17.0</em:minVersion>
+        <em:maxVersion>17.*</em:maxVersion>
       </Description>
     </em:targetApplication>
-   
-    <!-- Front End MetaData -->
-    <em:name>Adwaita-Thunderbird</em:name>
-    <em:description>GNOME 3 Adwaita theme for Thunderbird</em:description>
-    <em:creator>Adwaita Firefox Team</em:creator>
-    <em:contributor>Adwaita Firefox Team</em:contributor>
-    <em:internalName>Adwaita</em:internalName>
 
-  </Description>     
+  </Description>
 </RDF>

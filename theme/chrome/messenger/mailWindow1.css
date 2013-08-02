@@ -1,40 +1,7 @@
 /*
-# ***** BEGIN LICENSE BLOCK *****
-# Version: MPL 1.1/GPL 2.0/LGPL 2.1
-#
-# The contents of this file are subject to the Mozilla Public License Version
-# 1.1 (the "License"); you may not use this file except in compliance with
-# the License. You may obtain a copy of the License at
-# http://www.mozilla.org/MPL/
-#
-# Software distributed under the License is distributed on an "AS IS" basis,
-# WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
-# for the specific language governing rights and limitations under the
-# License.
-#
-# The Original Code is Mozilla Communicator client code, released
-# March 31, 1998.
-#
-# The Initial Developer of the Original Code is
-# Netscape Communications Corporation.
-# Portions created by the Initial Developer are Copyright (C) 1998-1999
-# the Initial Developer. All Rights Reserved.
-#
-# Contributor(s):
-#
-# Alternatively, the contents of this file may be used under the terms of
-# either the GNU General Public License Version 2 or later (the "GPL"), or
-# the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
-# in which case the provisions of the GPL or the LGPL are applicable instead
-# of those above. If you wish to allow use of your version of this file only
-# under the terms of either the GPL or the LGPL, and not to allow others to
-# use your version of this file under the terms of the MPL, indicate your
-# decision by deleting the provisions above and replace them with the notice
-# and other provisions required by the GPL or the LGPL. If you do not delete
-# the provisions above, a recipient may use your version of this file under
-# the terms of any one of the MPL, the GPL or the LGPL.
-#
-# ***** END LICENSE BLOCK *****
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
 /* ===== mailWindow1.css ================================================
@@ -50,11 +17,36 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* Don't use the listbox appearance as that gives us a blue-grey top border
-   that collides with the primary toolbar border */
-#threadTree, #folderTree {
-  -moz-appearance:  treeview;
-  background-color: -moz-Field;
+/* give the toolbox a min-height of 41px for Australis theme */
+.mail-toolbox:not([mode="full"]) > toolbar:only-of-type,
+.mail-toolbox[mode="full"][labelalign="end"] > toolbar:only-of-type {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.mail-toolbox[iconsize="large"]:not([mode="full"]) > toolbar:only-of-type,
+.mail-toolbox[iconsize="large"][mode="full"][labelalign="end"] >
+toolbar:only-of-type {
+  margin-top: 2px;
+  margin-bottom: 3px;
+}
+
+.mail-toolbox[mode="text"]:not([mode="full"]) > toolbar:only-of-type {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#viewPickerLabel:not(:-moz-lwtheme) {
+  color: MenuText;
+}
+
+#folderTree {
+  border-bottom: 1px solid ThreeDShadow;
+  background-color: -moz-OddTreeRow;
+}
+
+#threadTree {
+  border-bottom: 1px solid ThreeDShadow;
 }
 
 #mailContent {
@@ -64,6 +56,10 @@
 
 #tabmail:-moz-lwtheme {
   text-shadow: none;
+}
+
+#folderPaneHeader {
+  border-bottom: 1px solid ThreeDShadow;
 }
 
 #folderUnreadCol,
@@ -118,11 +114,16 @@ treechildren::-moz-tree-cell-text(container, closed, hasUnread, read) {
 
 /* ::::: message column icons ::::: */
 
+/* ..... column picker ..... */
+
+.tree-columnpicker-icon  {
+  list-style-image: url("chrome://messenger/skin/icons/columnpicker.svg");
+}
+
 /* ..... thread column ..... */
 
-treecol.threadColumnHeader {
-  list-style-image: url("chrome://messenger/skin/icons/thread-col.png");
-  -moz-padding-end: 3px; 
+.threadColumnHeader {
+  list-style-image: url("chrome://messenger/skin/icons/thread-col.svg");
 }
 
 treechildren::-moz-tree-image(threadCol, container) {
@@ -143,10 +144,9 @@ treechildren::-moz-tree-image(news, threadCol, ignoreSubthread) {
 
 /* ..... read column ..... */
 
-treecol.readColumnHeader {
-  list-style-image: url("chrome://messenger/skin/icons/readcol.png");
-  -moz-padding-end: 5px;
-  padding-bottom: 5px;
+.readColumnHeader {
+  list-style-image: url("chrome://messenger/skin/icons/readcol.svg");
+  -moz-padding-end: 3px;
 }
 
 treechildren::-moz-tree-image(unreadButtonColHeader) {
@@ -164,26 +164,28 @@ treechildren::-moz-tree-image(unreadButtonColHeader, unread) {
 
 /* ..... attachment column ..... */
 
-treecol.attachmentColumnHeader {
-  list-style-image: url("chrome://messenger/skin/icons/attachment-col.png");
-  -moz-padding-end: 5px; 
+.attachmentColumnHeader {
+  list-style-image: url("chrome://messenger/skin/icons/attachment-col.svg");
+  -moz-padding-end: 3px;
 }
 
 treechildren::-moz-tree-image(attachmentCol, attach) {
   list-style-image: url("chrome://messenger/skin/icons/message-list.png");
   -moz-image-region: rect(160px 16px 176px 0px); /* message-attachment.png */
+  -moz-padding-start: 2px;
 }
 
 /* ..... flag column ..... */
 
-treecol.flagColumnHeader {
-  list-style-image: url("chrome://messenger/skin/icons/flag-col.png");
-  -moz-padding-end: 5px; 
+.flagColumnHeader {
+  list-style-image: url("chrome://messenger/skin/icons/flag-col.svg");
+  -moz-padding-end: 3px;
 }
 
 treechildren::-moz-tree-image(flaggedCol) {
   list-style-image: url("chrome://messenger/skin/icons/message-list.png");
   -moz-image-region: rect(96px 16px 112px 0px); /* message-unstarred.png */
+  -moz-padding-end: 3px;
 }
 
 treechildren::-moz-tree-image(flaggedCol, dummy) {
@@ -192,13 +194,14 @@ treechildren::-moz-tree-image(flaggedCol, dummy) {
 
 treechildren::-moz-tree-image(flaggedCol, flagged) {
   -moz-image-region: rect(80px 16px 96px 0px); /* message-starred.png */
+  -moz-padding-end: 3px;
 }
 
 /* ..... junkStatus column ..... */
 
-treecol.junkStatusHeader {
-  list-style-image: url("chrome://messenger/skin/icons/junk-col.png");
-  -moz-padding-end: 5px; 
+.junkStatusHeader {
+  list-style-image: url("chrome://messenger/skin/icons/junk-col.svg");
+  -moz-padding-end: 3px;
 }
 
 /* "unknown" now looks like "not junk".  see bug #182386 */
@@ -220,7 +223,16 @@ treechildren::-moz-tree-image(junkStatusCol, notjunk) {
   -moz-image-region: rect(0px 16px 16px 0px); /* message-read.png */
   -moz-padding-start: 0px;
 }
+
 /* ..... subject column ..... */
+
+#subjectCol {
+  -moz-padding-start: 16px;
+}
+
+#subjectCol[primary="true"] {
+  -moz-padding-start: 26px;
+}
 
 treechildren::-moz-tree-image(subjectCol) {
   -moz-margin-end: 2px;
@@ -257,6 +269,9 @@ treechildren::-moz-tree-image(subjectCol, imapdeleted) {
   -moz-image-region: rect(0 80px 16px 64px);
 }
 
+treechildren::-moz-tree-cell-text(subjectCol) {
+  -moz-padding-start: 0;
+}
 
 #sizeCol,
 #unreadCol,
@@ -295,44 +310,112 @@ treechildren::-moz-tree-image(subjectCol, imapdeleted) {
 
 /* ..... splitter adjustments ..... */
 
-#folderpane_splitter {
-  border-right: none;
+#folderpane_splitter,
+#threadpane-splitter:not([orient="vertical"]) {
+  -moz-appearance: none;
+  border-left: 1px solid ThreeDShadow;
+  /* splitter grip area */
+  width: 5px;
+  margin-top: 0;
+  /* make only the splitter border visible */
+  -moz-margin-end: -5px;
+  /* because of the negative margin needed to make the splitter visible */
+  position: relative;
+  z-index: 10;
+  -moz-transition: border-width .3s ease-in;
 }
 
-#threadpane-splitter {
-  border: none;
-  min-height: 5px;
+#threadpane-splitter:not([orient="vertical"]) {
+  -moz-margin-start: -5px;
+  -moz-margin-end: 0;
+}
+
+/* Until Bug 621351 is fixed we need border-right and border-left in
+ * combination with -moz-locale-dir instead of -moz-border-end and
+ * -moz-border-start for -moz-transition
+ */
+
+#folderpane_splitter:-moz-locale-dir(rtl),
+#threadpane-splitter:not([orient="vertical"]):-moz-locale-dir(ltr) {
+  border-right: 1px solid ThreeDShadow;
+  border-left: none;
+}
+
+#folderpane_splitter[state="collapsed"]:hover:-moz-locale-dir(ltr),
+#threadpane-splitter[state="collapsed"]:not([orient="vertical"]):hover:-moz-locale-dir(rtl) {
+  border-left: 4px solid highlight;
+}
+
+#folderpane_splitter[state="collapsed"]:hover:-moz-locale-dir(rtl),
+#threadpane-splitter[state="collapsed"]:not([orient="vertical"]):hover:-moz-locale-dir(ltr) {
+  border-right: 4px solid highlight;
+}
+
+#threadpane-splitter,
+#attachment-splitter {
+  -moz-appearance: none;
+  border-bottom: 1px solid ThreeDShadow;
+  /* splitter grip area */
+  height: 5px;
+  /* make only the splitter border visible */
+  margin-top: -5px;
+  /* because of the negative margin needed to make the splitter visible */
+  position: relative;
+  z-index: 10;
+  -moz-transition: border-width .3s ease-in;
+}
+
+#attachment-splitter:not([state="collapsed"]) {
+  border-bottom: 1px solid transparent;
+}
+
+#attachment-splitter,
+#threadpane-splitter[state="collapsed"] {
+  -moz-transition: border-color .3s;
+}
+
+#threadpane-splitter[state="collapsed"]:hover,
+#attachment-splitter[state="collapsed"]:hover {
+  border-bottom: 4px solid highlight;
+}
+
+#messagesBox {
+  /* For some reason, the thread/message panes overlap the folder pane splitter
+     by 1px because of the CSS above. Fix this. */
+  -moz-margin-start: 1px;
 }
 
 /* ..... tree adjustments ..... */
 
 #accountCentralBox { 
-  border: 1px solid ThreeDShadow; 
+  border-bottom: 1px solid ThreeDShadow;
 }
 
 /* ..... message pane adjustments ..... */
 
 #messagepanebox {
-  border: 1px solid ThreeDShadow;
-}
-
-#threadpane-splitter[collapsed="true"] + #messagepanebox {
-  border-top: none;
+  border-bottom: 1px solid ThreeDShadow;
 }
 
 /* ..... status bar adjustments ..... */
 
 #quotaMeter {
+  -moz-appearance: none;
   min-width: 4em;
   max-width: 4em;
+  border: 1px solid ThreeDShadow;
+}
+#quotaPanel .progress-bar {
+  -moz-appearance: none;
+  background-color: #88AAFF;
+  opacity: .5;
 }
 #quotaPanel[alert="warning"] .progress-bar {
   background-color: orange;
-  -moz-appearance: none;
 }
 #quotaPanel[alert="critical"] .progress-bar {
   background-color: red;
-  -moz-appearance: none;
+  opacity: .6;
 }
 #quotaLabel {
   text-align: center;
@@ -359,6 +442,6 @@ treechildren::-moz-tree-image(subjectCol, imapdeleted) {
 
 /* ..... tabs ..... */
 
-tabpanels#tabpanelcontainer {
+#tabpanelcontainer {
   -moz-appearance: none;
 }
