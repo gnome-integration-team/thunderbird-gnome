@@ -1,0 +1,98 @@
+/* -*- Mode: Java; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*-
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== alert.css =====================================================
+  == Styles specific to the alerts dialog.
+  ======================================================================= */
+
+@import url("chrome://messenger/skin/");
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/*
+ * See bug 332160. Apply these rules on #alertContainer instead of on
+ * #newMailAlertNotification like on windows.
+ */
+#alertContainer {
+  min-height: 60px;
+  border: ridge #5486DA 4px;
+  background-color: -moz-Dialog;
+  color: -moz-DialogText;
+}
+
+#newMailAlertNotification {
+  border: none; /* See bug 332160. */
+}
+
+#alertImage {
+  list-style-image: url("chrome://branding/content/icon64.png");
+}
+
+#alertImageBox {
+  -moz-margin-start: 4px;
+  -moz-margin-end: 6px;
+  min-height: 46px;
+}
+
+#alertTitle {
+  font-weight: bold;
+  text-align: center;
+  /* this right margin keeps us from overlapping with the
+     close button. It's value should be related to the width
+     of the closeButtonImage
+  */
+  -moz-margin-end: 16px;
+}
+
+#alertTextBox {
+  -moz-padding-end: 10px;
+  padding-top: 5px;
+}
+
+.folderSummary-message-row
+{
+  /* This max width ends up dictating the overall width of the alert window
+     because it controls how large the preview, subject and sender text can be
+     before cropping kicks in */
+  max-width: 450px;
+  padding: 0px 5px;
+}
+
+.folderSummary-subject {
+  font-weight: bold;
+}
+
+.folderSummary-sender, .folderSummary-subject {
+  cursor: inherit;
+}
+
+.folderSummary-previewText {
+  color: grey;
+}
+
+.folderSummaryMessage:hover > .folderSummary-message-row {
+  cursor: pointer;
+  color: blue;
+}
+
+#closeButton {
+  list-style-image: url("chrome://messenger/skin/icons/close-button.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+  -moz-appearance: none;
+  border: none !important;
+  padding: 2px 0px 0px;
+}
+
+#closeButton > .toolbarbutton-icon {
+  -moz-margin-end: 0px; /* override toolkit's default value */
+}
+
+#closeButton:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#closeButton:hover:active {
+  -moz-image-region: rect(0px, 48px, 16px, 32px);
+}

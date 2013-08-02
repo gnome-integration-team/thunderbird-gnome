@@ -1,0 +1,23 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import url("chrome://messenger/content/glodaFacetView.css");
+
+.facet-more[needed="true"] {
+  font-size: x-small;
+}
+
+.results-message-showall-button {
+  font-size: x-small;
+}
+
+.results-message-sort-bar {
+  font-size: x-small;
+}
+
+.message-attachment-icon {
+  width: 12px;
+  height: 12px;
+  background: url("chrome://messenger/skin/icons/attachment-col.png") transparent no-repeat center right;
+}

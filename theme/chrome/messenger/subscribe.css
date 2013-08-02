@@ -1,0 +1,60 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== subscribe.css ==================================================
+  == Styles for the Subscribe dialog.
+  ======================================================================= */
+
+@import url("chrome://messenger/skin/");
+@import url("chrome://messenger/skin/folderMenus.css");
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: Subscription Icons  :::::: */
+
+treechildren::-moz-tree-image(subscribedColumn),
+treechildren::-moz-tree-image(subscribedColumn2) {
+  -moz-margin-end: 2px;
+  list-style-image: url("chrome://messenger/skin/icons/notchecked.gif");
+}
+
+treechildren::-moz-tree-image(subscribedColumn, Subscribed-true),
+treechildren::-moz-tree-image(subscribedColumn2, subscribed) {
+  list-style-image: url("chrome://messenger/skin/icons/check.gif");
+}
+
+treechildren::-moz-tree-image(subscribedColumn, Subscribable-false) {
+  list-style-image: none;
+}
+
+treechildren::-moz-tree-cell-text(nameColumn, Subscribable-false) {
+  color: gray;
+  font-style: italic;
+}
+
+/* IMAP Folders*/
+treechildren::-moz-tree-image(nameColumn) {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-attachment: scroll;
+  background-clip: border-box;
+  -moz-background-inline-policy: continuous;
+  -moz-background-origin: border;
+  background-image: url("moz-icon://stock/gtk-directory?size=menu");
+  list-style-image: url("chrome://messenger/skin/icons/folder-blank.png");
+
+  -moz-margin-end: 2px;
+}
+
+/* Newsgroups */
+treechildren::-moz-tree-image(nameColumn, ServerType-nntp),
+treechildren::-moz-tree-image(nameColumn2, nntp) {
+  background-image: url("chrome://messenger/skin/icons/folder-pane.png");
+  background-position: left -208px;
+  list-style-image: url("chrome://messenger/skin/icons/folder-blank.png");
+
+  -moz-margin-end: 2px;
+}
+
