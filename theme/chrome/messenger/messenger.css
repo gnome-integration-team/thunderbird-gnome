@@ -87,19 +87,21 @@ menulist > menupopup > menu > .menu-iconic-left {
 .mail-toolbox,
 .contentTabToolbox {
   -moz-appearance: none;
-  border-bottom: 1px solid threedshadow;
-  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 19px);
-}
-
-.mail-toolbox:-moz-lwtheme,
-.contentTabToolbox:-moz-lwtheme {
-  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 19px);
+  background: linear-gradient(to top, #a7aba7 1px, #fff 1px, #fff);
+  border-bottom: none !important;
+  min-height: 3px;
 }
 
 .mail-toolbox > toolbar,
 .contentTabToolbox > toolbar {
   -moz-appearance: none;
   background: transparent;
+}
+
+.mail-toolbox > toolbar {
+  background: linear-gradient(to bottom, #fff, #f3f3f3);
+  border-bottom: 1px solid #a7aba7;
+  margin: 0 !important;
 }
 
 /* ::::: throbber ::::: */
