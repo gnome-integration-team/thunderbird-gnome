@@ -10,15 +10,14 @@
 }
 
 #editContactPanel {
-  -moz-appearance: menupopup;
-  color: MenuText;
-  padding: 4px;
+  -moz-margin-start: 0px;
 }
 
 #editContactPanelIcon {
   list-style-image: url("chrome://messenger/skin/starred48.png");
   width: 48px;
   height: 48px;
+  min-height: 48px;
 }
 
 #editContactPanelTitle {

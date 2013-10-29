@@ -19,8 +19,8 @@
 /* :::::  message in a tab ::::: */
 #displayDeck[collapsed="true"] + splitter + #messagepaneboxwrapper 
 .main-header-area {
-  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.3), 
-                                         rgba(255, 255, 255, 0) 19px);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3),
+                                    rgba(255, 255, 255, 0) 19px);
 }
 
 /* ::::: msg header toolbars ::::: */
@@ -283,8 +283,7 @@ toolbarpaletteitem > #hdrReplyToSenderButton {
 }
 
 .hdrTagButton {
-  list-style-image: url("chrome://messenger/skin/icons/mail-toolbar-small.png");
-  -moz-image-region: rect(0px 192px 16px 176px);
+  list-style-image: url("chrome://messenger/skin/icons/button-tag.svg");
 }
 
 window[inlinetoolbox] #wrapper-spring {
@@ -373,7 +372,7 @@ toolbarpaletteitem #hdrDummyReplyButton {
   background-color: transparent;
   padding: 0px;
   margin-top: 0;
-  -moz-margin-end: 0;
+  -moz-margin-end: 3px;
 }
 
 .headerValueBox {

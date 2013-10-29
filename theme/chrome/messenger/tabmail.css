@@ -6,20 +6,30 @@
  * Tabmail Tabs
  */
 
+#navigation-toolbox:not(:-moz-lwtheme) {
+  -moz-appearance: menubar;
+}
+
 #tabs-toolbar {
+  -moz-appearance: none;
   padding: 0;
+  border-bottom: 1px solid rgba(10, 31, 51, .35);
+}
+
+#tabs-toolbar:-moz-lwtheme {
+  border-bottom: 1px solid transparent;
 }
 
 #tabpanelcontainer:-moz-lwtheme {
   color: inherit;
 }
 
-.tabmail-tabs:not(:-moz-lwtheme) {
-  -moz-appearance: menubar;
-}
-
 .tabmail-tabs[overflow="true"] {
   -moz-padding-start: 0px;
+}
+
+.tabmail-arrowscrollbox {
+  margin-bottom: -1px;
 }
 
 .tabmail-tabs > .tabmail-tab:first-child > .tab-stack > .tab-content >
@@ -69,7 +79,7 @@ tabpanels {
                        30px 0,
                        right 0;
   background-size: 30px 100%,
-                   -moz-calc(100% - 60px) 100%,
+                   calc(100% - 60px) 100%,
                    30px 100%;
 }
 
@@ -97,9 +107,9 @@ tabpanels {
   height: 28px;
   -moz-margin-start: -2px;
   -moz-margin-end: 0;
-  background: -moz-linear-gradient(bottom, hsla(210, 23%, 10%, .4),
+  background: linear-gradient(to top, hsla(210, 23%, 10%, .4),
               hsla(210, 23%, 10%, .1) 80%, transparent),
-              -moz-linear-gradient(bottom, hsla(0, 0%, 100%, .4),
+              linear-gradient(to top, hsla(0, 0%, 100%, .4),
               hsla(0, 0%, 100%, .1) 80%, transparent);
   background-position: 0 0, 1px 0;
   background-size: 1px 100%;
@@ -124,7 +134,7 @@ tabpanels {
 
 .tab-background-end:-moz-locale-dir(ltr),
 .tab-background-start:-moz-locale-dir(rtl) {
-  -moz-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .tab-background-middle {
@@ -300,7 +310,7 @@ tabpanels {
 
 .contentTabToolbox:-moz-lwtheme {
   height: 1px;
-  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) 50%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) 50%);
   background-color: rgba(255, 255, 255, 0.3);
 }
 

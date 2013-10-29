@@ -23,8 +23,8 @@
 
 /* Feed */
 .folderMenuItem[ServerType="rss"] {
-  list-style-image: url("chrome://messenger/skin/icons/folder-pane.png");
-  -moz-image-region: rect(112px 16px 128px 0px);
+  list-style-image: url("chrome://messenger-newsblog/skin/icons/rss-feed.png");
+  -moz-image-region: rect(0 16px 16px 0);
 }
 
 .folderMenuItem[SpecialFolder="Inbox"] {
@@ -100,14 +100,4 @@
 .folderMenuItem[IsServer="true"][ServerType="rss"] {
   list-style-image: url("chrome://messenger/skin/icons/folder-pane.png");
   -moz-image-region: rect(32px 16px 48px 0px);
-}
-
-/* Make any sub-menu item of the folderLocationPopup act like a menuitem. */
-.folderLocationPopup menuitem,
-.folderLocationPopup menu {
-  -moz-padding-end: 30px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  max-width: none;
-  font: message-box;
 }
