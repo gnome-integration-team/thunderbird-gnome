@@ -11,48 +11,43 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/*
- * See bug 332160. Apply these rules on #alertContainer instead of on
- * #newMailAlertNotification like on windows.
- */
-#alertContainer {
+#newMailAlertNotification {
+  -moz-appearance: none;
   min-height: 60px;
-  border: ridge #5486DA 4px;
+  border: 1px solid threedshadow;
   background-color: -moz-Dialog;
-  color: -moz-DialogText;
 }
 
-#newMailAlertNotification {
-  border: none; /* See bug 332160. */
+#alertImageBox {
+  padding: 4px;
+  background-image: linear-gradient(rgba(255, 255, 255, .7),
+                                    rgba(255, 255, 255, .6));
+  -moz-border-end: 1px solid rgba(0, 0, 0, .1);
 }
 
 #alertImage {
   list-style-image: url("chrome://branding/content/icon64.png");
 }
 
-#alertImageBox {
-  -moz-margin-start: 4px;
-  -moz-margin-end: 6px;
-  min-height: 46px;
+#alertTextBox {
+  padding: 4px;
+  -moz-padding-end: 25px;
+  background-image: linear-gradient(rgba(255, 255, 255, .2),
+                                    rgba(255, 255, 255, .1));
 }
 
 #alertTitle {
   font-weight: bold;
-  text-align: center;
-  /* this right margin keeps us from overlapping with the
-     close button. It's value should be related to the width
-     of the closeButtonImage
-  */
-  -moz-margin-end: 16px;
+  font-size: 110%;
+  -moz-padding-start: 5px;
+  -moz-padding-end: 5px;
 }
 
-#alertTextBox {
-  -moz-padding-end: 10px;
-  padding-top: 5px;
+#alertGroove {
+  -moz-margin-start: 11px;
 }
 
-.folderSummary-message-row
-{
+.folderSummary-message-row {
   /* This max width ends up dictating the overall width of the alert window
      because it controls how large the preview, subject and sender text can be
      before cropping kicks in */
@@ -69,12 +64,16 @@
 }
 
 .folderSummary-previewText {
-  color: grey;
+  opacity: 0.6;
 }
 
 .folderSummaryMessage:hover > .folderSummary-message-row {
   cursor: pointer;
-  color: blue;
+  color: -moz-hyperlinktext;
+}
+
+.folderSummaryMessage:hover:active > .folderSummary-message-row {
+  color: -moz-activehyperlinktext;
 }
 
 #closeButton {
@@ -82,11 +81,7 @@
   -moz-image-region: rect(0px, 16px, 16px, 0px);
   -moz-appearance: none;
   border: none !important;
-  padding: 2px 0px 0px;
-}
-
-#closeButton > .toolbarbutton-icon {
-  -moz-margin-end: 0px; /* override toolkit's default value */
+  padding: 2px;
 }
 
 #closeButton:hover {

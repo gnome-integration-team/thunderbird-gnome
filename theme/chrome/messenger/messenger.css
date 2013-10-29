@@ -30,18 +30,14 @@ toolbar[printpreview="true"] {
   -moz-binding: url("chrome://global/content/printPreviewBindings.xml#printpreviewtoolbar");
 }
 
-toolbar:not(.inline-toolbar) {
-  -moz-appearance: menubar;
-}
-
 toolbar:not(#mail-toolbar-menubar2) {
   -moz-appearance: none;
 }
 
-#navigation-toolbox > toolbar:not(#mail-toolbar-menubar2):not(#tabs-toolbar) {
+#navigation-toolbox toolbar:not(#mail-toolbar-menubar2):not(#tabs-toolbar) {
   border-top: 1px solid #a7aba7 !important;
 }
-#navigation-toolbox > toolbar:not(#mail-toolbar-menubar2):not(#tabs-toolbar)[collapsed="false"] ~ toolbar {
+#navigation-toolbox toolbar:not(#mail-toolbar-menubar2):not(#tabs-toolbar)[collapsed="false"] ~ toolbar {
   border-top: 0 !important;
 }
 
@@ -435,12 +431,14 @@ treechildren::-moz-tree-cell-text {
 
 /*
 notification[value="addon-install-blocked"],
-notification[value="addon-install-failed"],
 notification[value="addon-install-complete"] {
   background-image: url("chrome://mozapps/skin/extensions/stripes-info-negative.png"),
-                    -moz-linear-gradient(rgba(255, 255, 255, 0),
-                                         rgba(255, 255, 255, 0.5));
+                    linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
   background-repeat: repeat-x;
+}
+
+notification[value="addon-install-failed"] {
+  background-image: linear-gradient(rgb(255, 100, 100), rgb(204, 85, 85));
 }
 
 notification[value="addon-install-blocked"] .notification-inner,
@@ -449,3 +447,17 @@ notification[value="addon-install-complete"] .notification-inner {
   border: none;
 }
 */
+
+notification[value="addon-install-failed"] .messageCloseButton {
+  -moz-appearance: none;
+  list-style-image: url("chrome://messenger/skin/icons/close-inverted.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+notification[value="addon-install-failed"] .messageCloseButton:hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+notification[value="addon-install-failed"] .messageCloseButton:hover:active {
+  -moz-image-region: rect(0, 48px, 16px, 32px);
+}

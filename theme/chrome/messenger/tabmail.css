@@ -7,15 +7,16 @@
  */
 
 #tabs-toolbar {
+  -moz-appearance: none;
   padding: 0;
+}
+
+#tabs-toolbar:-moz-lwtheme {
+  border-bottom: 1px solid transparent;
 }
 
 #tabpanelcontainer:-moz-lwtheme {
   color: inherit;
-}
-
-.tabmail-tabs:not(:-moz-lwtheme) {
-  -moz-appearance: menubar;
 }
 
 .tabmail-tabs[overflow="true"] {
@@ -306,7 +307,7 @@ tabpanels {
 
 .contentTabToolbox:-moz-lwtheme {
   height: 1px;
-  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) 50%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) 50%);
   background-color: rgba(255, 255, 255, 0.3);
 }
 

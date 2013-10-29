@@ -7,7 +7,6 @@
   ======================================================================= */
 
 @import url("chrome://messenger/skin/");
-@import url("chrome://global/skin/toolbar.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
@@ -216,7 +215,7 @@ treechildren::-moz-tree-image(DirCol, IsRemote-true, IsSecure-true) {
 /* ::::: results pane ::::: */
 
 #GeneratedName {
-  -moz-padding-start: 22px;
+  -moz-padding-start: 26px;
 }
 
 treechildren::-moz-tree-image(GeneratedName) {
@@ -274,6 +273,10 @@ treechildren::-moz-tree-cell-text(GeneratedName) {
   color: HighlightText;
   font-weight: bold;
   min-width: 30px;
+}
+
+#cvPhoto {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/contact-generic.png");
 }
 
 #cvBuddyIcon {

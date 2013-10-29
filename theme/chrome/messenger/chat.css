@@ -139,7 +139,7 @@ imcontact[aliasing] .contactDisplayName {
   border-style: none;
   -moz-appearance: none;
   background-color: -moz-Dialog;
-  background-image: -moz-linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0));
+  background-image: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0));
   border-bottom: 1px solid ThreeDShadow;
 }
 
@@ -395,12 +395,13 @@ toolbar[mode="text"] #statusTypeIcon > .toolbarbutton-icon {
   /* because of the negative margin needed to make the splitter visible */
   position: relative;
   z-index: 10;
-  -moz-transition: border-width .3s ease-in;
+  transition: border-width .3s ease-in;
 }
 
 /* Adaptation from #folderTree */
 #listPaneBox {
   background-color: -moz-OddTreeRow;
+  background-image: url("chrome://messenger/skin/grain.png");
 }
 
 #listPaneBox > * {
@@ -564,4 +565,10 @@ richlistitem[state="disconnected"] .accountStateIcon {
 #setStatusTypeMenupopup .menu-iconic-icon,
 #imAccountsStatus .menu-iconic-icon {
   visibility: visible;
+}
+
+.tabmail-tab[type="chat"],
+.alltabs-item[type="chat"] {
+  list-style-image: url("chrome://messenger/skin/icons/mail-toolbar-small.png");
+  -moz-image-region: rect(0px 240px 16px 224px);
 }

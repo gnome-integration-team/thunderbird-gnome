@@ -8,10 +8,14 @@
 
 @import url("chrome://messenger/skin/");
 @import url("chrome://messenger/skin/primaryToolbar.css");
-@import url("chrome://global/skin/toolbar.css");
 @import url("chrome://messenger/skin/tagColors.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+.mail-toolbox {
+  margin-top: 0px;
+  padding-top: 0px;
+}
 
 #messagepanebox {
   text-shadow: none;
@@ -35,7 +39,7 @@
   /* because of the negative margin needed to make the splitter visible */
   position: relative;
   z-index: 10;
-  -moz-transition: border-width .3s ease-in;
+  transition: border-width .3s ease-in;
 }
 
 #attachment-splitter:not([state="collapsed"]) {
@@ -43,7 +47,7 @@
 }
 
 #attachment-splitter {
-  -moz-transition: border-color .3s;
+  transition: border-color .3s;
 }
 
 #attachment-splitter[state="collapsed"]:hover {
