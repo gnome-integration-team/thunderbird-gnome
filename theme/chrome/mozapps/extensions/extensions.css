@@ -349,38 +349,32 @@
 }
 
 #back-btn:-moz-locale-dir(ltr) {
-  list-style-image: url(moz-icon://stock/go-previous-symbolic?size=menu);
+  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-previous.svg);
 }
 
 #forward-btn:-moz-locale-dir(ltr) {
-  list-style-image: url(moz-icon://stock/go-next-symbolic?size=menu);
+  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-next.svg);
 }
 
 #back-btn:-moz-locale-dir(rtl) {
-  list-style-image: url(moz-icon://stock/go-next-symbolic?size=menu);
+  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-next.svg);
 }
 
 #forward-btn:-moz-locale-dir(rtl) {
-  list-style-image: url(moz-icon://stock/go-previous-symbolic?size=menu);
+  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-previous.svg);
 }
 
-#back-btn:not([disabled="true"]) > .toolbarbutton-icon,
-#forward-btn:not([disabled="true"]) > .toolbarbutton-icon {
-  filter: url(chrome://messenger/skin/symbolic-icons-colors.svg#default);
-}
-
-#back-btn:not([open="true"]):not([disabled="true"]):active:hover > .toolbarbutton-icon,
-#forward-btn:not([open="true"]):not([disabled="true"]):active:hover > .toolbarbutton-icon {
-  filter: url(chrome://messenger/skin/symbolic-icons-colors.svg#active);
+#back-btn[disabled="true"] > .toolbarbutton-icon,
+#forward-btn[disabled="true"] > .toolbarbutton-icon {
+  opacity: 0.5;
 }
 
 #header-utils-btn {
-  list-style-image: url(moz-icon://stock/preferences-system-symbolic?size=menu);
+  list-style-image: url(chrome://messenger/skin/symbolic-icons/preferences-system.svg);
 }
 
 #header-utils-btn > .toolbarbutton-icon {
   -moz-margin-end: 0;
-  filter: url(chrome://messenger/skin/symbolic-icons-colors.svg#default);
 }
 
 #header-utils-btn > .toolbarbutton-menu-dropmarker {
@@ -427,14 +421,12 @@
 
 .sorter[checkState="1"] .button-icon {
   display: -moz-box;
-  list-style-image: url(moz-icon://stock/go-up-symbolic?size=menu);
-  filter: url(chrome://messenger/skin/symbolic-icons-colors.svg#default);
+  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-up.svg);
 }
 
 .sorter[checkState="2"] .button-icon {
   display: -moz-box;
-  list-style-image: url(moz-icon://stock/go-down-symbolic?size=menu);
-  filter: url(chrome://messenger/skin/symbolic-icons-colors.svg#default);
+  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-down.svg);
 }
 
 /*** discover view ***/
@@ -729,7 +721,7 @@
   background: transparent;
   font-weight: bold;
   cursor: pointer;
-  list-style-image: url(moz-icon://stock/go-down-symbolic?size=menu);
+  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-down.svg);
   margin-top: 10px;
 }
 
@@ -738,7 +730,6 @@
 }
 
 .addon .relnotes-toggle > .button-box > .button-icon {
-  filter: url(chrome://messenger/skin/symbolic-icons-colors.svg#default);
   display: -moz-box;
 }
 
@@ -747,7 +738,7 @@
 }
 
 .addon[show-relnotes] .relnotes-toggle {
-  list-style-image: url(moz-icon://stock/go-up-symbolic?size=menu);
+  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-up.svg);
 }
 
 /*** search view ***/
@@ -1058,12 +1049,9 @@ setting[type="radio"] > radiogroup {
 	-moz-margin-start: 5em;
 }
 
-/*
-  #new-userstyle == "Write New Style" (Stylish)
-*/
-.addon-control:not(#new-userstyle) {
+.addon-control {
   -moz-appearance: none;
-  background: transparent ;
+  background: transparent;
   border: 1px solid transparent;
   border-radius: 3px;
   filter: none;
@@ -1074,32 +1062,53 @@ setting[type="radio"] > radiogroup {
   transition-duration: 200ms;
 }
 
-.addon-control:not(#new-userstyle):not([disabled="true"]):hover {
+.addon-control:not([disabled="true"]):hover {
   border-color: rgba(0,0,0,.25) !important;
   box-shadow: 0 1px 0 rgba(255,255,255,0.69),
               0 1px 0 rgba(255,255,255,0.69) inset;
 }
 
-.addon-control:not(#new-userstyle):not([disabled="true"]):active:hover,
-.addon-control:not(#new-userstyle)[checked="true"],
-.addon-control:not(#new-userstyle)[checked="true"]:hover {
+.addon-control:not([disabled="true"]):active:hover,
+.addon-control[checked="true"],
+.addon-control[checked="true"]:hover {
   background-image: linear-gradient(to bottom, #c9c9c9, #e4e4e4);
   border-color: rgba(0,0,0,.25);
   box-shadow: 0 1px 0 rgba(255,255,255,0.69);
 }
 
-.addon-control:not(#new-userstyle)[open="true"],
-.addon-control:not(#new-userstyle)[open="true"]:hover,
-.addon-control:not(#new-userstyle)[open="true"]:active,
-.addon-control:not(#new-userstyle)[open="true"]:active:hover {
+.addon-control[open="true"],
+.addon-control[open="true"]:hover,
+.addon-control[open="true"]:active,
+.addon-control[open="true"]:active:hover {
   background: #ffffff !important;
   border-color: #ffffff !important;
   box-shadow: 0 1px 0 rgba(255,255,255,0.69);
   border-radius: 3px 3px 0 0;
 }
 
-.addon-control:not(#new-userstyle)[disabled="true"] {
+.addon-control[disabled="true"] {
   display: none;
+}
+
+/*
+  #new-userstyle == "Write New Style" (Stylish)
+*/
+#new-userstyle.addon-control {
+  -moz-appearance: button;
+  padding: 0;
+  transition-duration: 0;
+}
+menuitem.addon-control {
+  -moz-appearance: menuitem;
+  border: none;
+  max-width: none;
+  opacity: 1;
+  padding: 1px 5px;
+  transition-duration: 0;
+}
+menuitem.addon-control:hover {
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .addon-control.enable .button-icon,
@@ -1117,7 +1126,7 @@ setting[type="radio"] > radiogroup {
   display: none;
 }
 
-   /*  Switches*/
+/* Switches */
 
 .addon-control.enable {
 /*  list-style-image: url("moz-icon://stock/gtk-yes?size=button");*/
@@ -1139,48 +1148,52 @@ setting[type="radio"] > radiogroup {
   box-shadow: none !important;
 }
 
-.addon[active="false"] .addon-control.enable,
-.addon[active="false"] .addon-control.disable{
+button.addon[active="false"] .addon-control.enable,
+button.addon[active="false"] .addon-control.disable{
   opacity: 1;
 }
 
 .addon-control.remove {
 /*  list-style-image: url("moz-icon://stock/gtk-remove?size=button");*/
-  list-style-image: url(moz-icon://stock/user-trash-symbolic?size=menu);
+  list-style-image: url(chrome://messenger/skin/symbolic-icons/user-trash.svg);
 }
 
 .addon-control.preferences {
 /*  list-style-image: url("moz-icon://stock/gtk-preferences?size=button");*/
-  list-style-image: url(moz-icon://stock/emblem-system-symbolic?size=menu);
-}
-
-.addon-control.remove .button-icon,
-.addon-control.preferences .button-icon {
-  filter: url(chrome://messenger/skin/symbolic-icons-colors.svg#default);
+  list-style-image: url(chrome://messenger/skin/symbolic-icons/emblem-system.svg);
 }
 
 .addon-control.update {
-	color: #fff;
-	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
-	background-image: linear-gradient(to bottom, #4294F7, #004EAD);
-	padding: 4px 15px;
-	box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset;
-	border: 1px solid #003372;
+  color: #fff;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+  background-image: linear-gradient(to bottom, #4294F7, #004EAD);
+  padding: 4px 15px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset;
+  border: 1px solid #003372;
 }
 
 .addon-control.install {
-	color: #fff;
-	text-shadow: 0px -1px 0px rgba(0,0,0,0.3);
-	background-image: linear-gradient(to bottom, #89C400, #5B9C00);
-	padding: 4px 15px;
-	box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset;
-	border: 1px solid #316D0E;
+  color: #fff;
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.3);
+  background-image: linear-gradient(to bottom, #89C400, #5B9C00);
+  padding: 4px 15px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset;
+  border: 1px solid #316D0E;
 }
 
 .addon-control.install:active:hover {
-	color: #203006;
-	text-shadow: 0px 1px 0px rgba(255,255,255,0.3);
-	box-shadow: 0 0 2px 1px rgba(0,0,0,0.2) inset;
+  color: #203006;
+  text-shadow: 0px 1px 0px rgba(255,255,255,0.3);
+  box-shadow: 0 0 2px 1px rgba(0,0,0,0.2) inset;
+}
+
+.addon-control.state .menulist-dropmarker {
+  -moz-appearance: none;
+  display: -moz-box;
+  list-style-image: url(chrome://messenger/skin/symbolic-icons/dropmarker.svg);
+  padding: 3px;
+  margin: 2px 0;
+  max-height: 16px;
 }
 
 .button-link {
