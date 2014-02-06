@@ -176,10 +176,15 @@ menuitem[type="radio"] {
 /* ::::: menuseparator ::::: */
 
 menuseparator {
+  /*
   -moz-appearance: menuseparator !important;
   margin: 2px 0;
   border-top: 1px solid ThreeDShadow;
   border-bottom: 1px solid ThreeDHighlight;
+  */
+  margin: 3px 4px;
+  border: 1px solid rgba(0,0,0,.08);
+  border-width: 1px 0 0;
 }
 
 menulist > menupopup > menuseparator,

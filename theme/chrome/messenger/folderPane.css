@@ -3,6 +3,10 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 /* ::::: Folder Pane ::::: */
+/* reduce the padding set from messenger.css */
+#folderTree treechildren::-moz-tree-cell-text {
+  -moz-padding-start: 2px;
+}
 
 /* this needs a different rule from the tree because otherwise the margin
    applies to the tab */
@@ -15,13 +19,17 @@ treechildren::-moz-tree-image(folderNameCol) {
   -moz-margin-end: 2px;
 }
 
+/* ..... Shared folders .....
+treechildren::-moz-tree-image(folderNameCol, imapShared-true) {
+} */
+
 treechildren::-moz-tree-image(folderNameCol, newMessages-true) {
   list-style-image: url("moz-icon://stock/gtk-directory?size=menu");
 }
 
-treechildren::-moz-tree-image(folderNameCol, serverType-rss, newMessages-true) {
-  list-style-image: url("chrome://messenger/skin/icons/folder-pane.png");
-  -moz-image-region: rect(112px 16px 128px 0px);
+treechildren::-moz-tree-image(folderNameCol, isFeedFolder-true, newMessages-true) {
+  list-style-image: url("chrome://messenger-newsblog/skin/icons/rss-feed.png");
+  -moz-image-region: rect(0 16px 16px 0);
 }
 
 /* ..... Inbox ..... */
@@ -107,9 +115,9 @@ treechildren::-moz-tree-image(folderNameCol, serverType-nntp) {
 /* ..... Feed ..... */
 
 .tabmail-tab[type="folder"][ServerType="rss"],
-treechildren::-moz-tree-image(folderNameCol, serverType-rss) {
-  list-style-image: url("chrome://messenger/skin/icons/folder-pane.png");
-  -moz-image-region: rect(112px 16px 128px 0px);
+treechildren::-moz-tree-image(folderNameCol, isFeedFolder-true) {
+  list-style-image: url("chrome://messenger-newsblog/skin/icons/rss-feed.png");
+  -moz-image-region: rect(0 16px 16px 0);
 }
 
 /* ..... Account nodes ..... */
@@ -238,10 +246,10 @@ treechildren::-moz-tree-twisty(open) {
   -moz-appearance: treetwistyopen;
 }
 
-treechildren::-moz-tree-cell-text(folderNameCol, newMessages-true) {
+#folderTree treechildren::-moz-tree-cell-text(folderNameCol, newMessages-true) {
   font-weight: bold;
   margin-left: -16px;
-  padding-left: 21px;
+  padding-left: 18px;
   background-image: url("chrome://messenger/skin/icons/folder-new-star.png");
   background-repeat: no-repeat;
   background-position: left;

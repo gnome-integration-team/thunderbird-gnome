@@ -10,7 +10,6 @@
 
 @import url("chrome://messenger/skin/");
 @import url("chrome://messenger/skin/primaryToolbar.css");
-@import url("chrome://global/skin/toolbar.css");
 @import url("chrome://messenger/skin/folderMenus.css");
 @import url("chrome://messenger/skin/folderPane.css");
 @import url("chrome://messenger/skin/tagColors.css");
@@ -43,6 +42,7 @@ toolbar:only-of-type {
 #folderTree {
   border-bottom: 1px solid ThreeDShadow;
   background-color: -moz-OddTreeRow;
+  background-image: url("chrome://messenger/skin/grain.png");
 }
 
 #threadTree {
@@ -130,15 +130,15 @@ treechildren::-moz-tree-image(threadCol, container) {
   list-style-image: url("chrome://messenger/skin/icons/thread.png");
 }
 
-treechildren::-moz-tree-image(news, threadCol, watch) {
+treechildren::-moz-tree-image(threadCol, watch) {
   list-style-image: url("chrome://messenger/skin/icons/thread-watched.png");
 }
 
-treechildren::-moz-tree-image(news, threadCol, ignore) {
+treechildren::-moz-tree-image(threadCol, ignore) {
   list-style-image: url("chrome://messenger/skin/icons/thread-ignored.png");
 }
 
-treechildren::-moz-tree-image(news, threadCol, ignoreSubthread) {
+treechildren::-moz-tree-image(threadCol, ignoreSubthread) {
   list-style-image: url("chrome://messenger/skin/icons/message-ignored.png");
 }
 
@@ -322,7 +322,7 @@ treechildren::-moz-tree-cell-text(subjectCol) {
   /* because of the negative margin needed to make the splitter visible */
   position: relative;
   z-index: 10;
-  -moz-transition: border-width .3s ease-in;
+  transition: border-width .3s ease-in;
 }
 
 #threadpane-splitter:not([orient="vertical"]) {
@@ -332,7 +332,7 @@ treechildren::-moz-tree-cell-text(subjectCol) {
 
 /* Until Bug 621351 is fixed we need border-right and border-left in
  * combination with -moz-locale-dir instead of -moz-border-end and
- * -moz-border-start for -moz-transition
+ * -moz-border-start for transition
  */
 
 #folderpane_splitter:-moz-locale-dir(rtl),
@@ -362,7 +362,7 @@ treechildren::-moz-tree-cell-text(subjectCol) {
   /* because of the negative margin needed to make the splitter visible */
   position: relative;
   z-index: 10;
-  -moz-transition: border-width .3s ease-in;
+  transition: border-width .3s ease-in;
 }
 
 #attachment-splitter:not([state="collapsed"]) {
@@ -371,7 +371,7 @@ treechildren::-moz-tree-cell-text(subjectCol) {
 
 #attachment-splitter,
 #threadpane-splitter[state="collapsed"] {
-  -moz-transition: border-color .3s;
+  transition: border-color .3s;
 }
 
 #threadpane-splitter[state="collapsed"]:hover,
@@ -422,7 +422,7 @@ treechildren::-moz-tree-cell-text(subjectCol) {
 }
 
 #threadTree > treechildren::-moz-tree-row(odd) {
-  background-color: -moz-oddtreerow;
+  background-color: transparent;
 }
 
 #threadTree > treechildren::-moz-tree-row(selected) {
