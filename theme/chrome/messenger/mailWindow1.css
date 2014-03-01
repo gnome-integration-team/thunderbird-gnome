@@ -40,7 +40,9 @@ toolbar:only-of-type {
 }
 
 #folderTree {
+  /*
   border-bottom: 1px solid ThreeDShadow;
+  */
   background-color: -moz-OddTreeRow;
   background-image: url("chrome://messenger/skin/grain.png");
 }
@@ -394,10 +396,18 @@ treechildren::-moz-tree-cell-text(subjectCol) {
 /* ..... message pane adjustments ..... */
 
 #messagepanebox {
+  /*
   border-bottom: 1px solid ThreeDShadow;
+  */
 }
 
 /* ..... status bar adjustments ..... */
+
+#status-bar {
+  -moz-appearance: none;
+  border: 0;
+  border-top: 1px solid #a7aba7;
+}
 
 #quotaMeter {
   -moz-appearance: none;
