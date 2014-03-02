@@ -55,14 +55,14 @@
 /*** notification icons ***/
 
 .warning-icon {
-  list-style-image: url(chrome://messenger/skin/symbolic-icons/important.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/important.svg);
   width: 16px;
   height: 16px;
   margin: 3px 0;
 }
 
 .error-icon {
-  list-style-image: url(chrome://messenger/skin/symbolic-icons/error.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/error.svg);
   width: 16px;
   height: 16px;
   margin: 3px 0;
@@ -70,7 +70,7 @@
 
 .pending-icon,
 .info-icon {
-  list-style-image: url(chrome://messenger/skin/symbolic-icons/information.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/information.svg);
   width: 16px;
   height: 16px;
   margin: 3px 0;
@@ -349,19 +349,19 @@
 }
 
 #back-btn:-moz-locale-dir(ltr) {
-  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-previous.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/go-previous.svg);
 }
 
 #forward-btn:-moz-locale-dir(ltr) {
-  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-next.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/go-next.svg);
 }
 
 #back-btn:-moz-locale-dir(rtl) {
-  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-next.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/go-next.svg);
 }
 
 #forward-btn:-moz-locale-dir(rtl) {
-  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-previous.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/go-previous.svg);
 }
 
 #back-btn[disabled="true"] > .toolbarbutton-icon,
@@ -370,7 +370,7 @@
 }
 
 #header-utils-btn {
-  list-style-image: url(chrome://messenger/skin/symbolic-icons/preferences-system.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/preferences-system.svg);
 }
 
 #header-utils-btn > .toolbarbutton-icon {
@@ -421,12 +421,12 @@
 
 .sorter[checkState="1"] .button-icon {
   display: -moz-box;
-  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-up.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/go-up.svg);
 }
 
 .sorter[checkState="2"] .button-icon {
   display: -moz-box;
-  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-down.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/go-down.svg);
 }
 
 /*** discover view ***/
@@ -721,7 +721,7 @@
   background: transparent;
   font-weight: bold;
   cursor: pointer;
-  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-down.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/go-down.svg);
   margin-top: 10px;
 }
 
@@ -738,7 +738,7 @@
 }
 
 .addon[show-relnotes] .relnotes-toggle {
-  list-style-image: url(chrome://messenger/skin/symbolic-icons/go-up.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/go-up.svg);
 }
 
 /*** search view ***/
@@ -1155,12 +1155,12 @@ button.addon[active="false"] .addon-control.disable{
 
 .addon-control.remove {
 /*  list-style-image: url("moz-icon://stock/gtk-remove?size=button");*/
-  list-style-image: url(chrome://messenger/skin/symbolic-icons/user-trash.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/user-trash.svg);
 }
 
 .addon-control.preferences {
 /*  list-style-image: url("moz-icon://stock/gtk-preferences?size=button");*/
-  list-style-image: url(chrome://messenger/skin/symbolic-icons/emblem-system.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/emblem-system.svg);
 }
 
 .addon-control.update {
@@ -1190,7 +1190,7 @@ button.addon[active="false"] .addon-control.disable{
 .addon-control.state .menulist-dropmarker {
   -moz-appearance: none;
   display: -moz-box;
-  list-style-image: url(chrome://messenger/skin/symbolic-icons/dropmarker.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/dropmarker.svg);
   padding: 3px;
   margin: 2px 0;
   max-height: 16px;

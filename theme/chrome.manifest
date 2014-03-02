@@ -1,3 +1,4 @@
-skin    messenger       Adwaita     chrome/messenger/
-skin    global          Adwaita     chrome/global/
-skin    mozapps         Adwaita     chrome/mozapps/
+skin    messenger         Adwaita    chrome/messenger/
+skin    global            Adwaita    chrome/global/
+skin    mozapps           Adwaita    chrome/mozapps/
+skin    symbolic-icons    Adwaita    chrome/symbolic-icons/
