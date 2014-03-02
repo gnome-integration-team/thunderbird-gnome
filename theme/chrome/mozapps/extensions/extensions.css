@@ -174,6 +174,7 @@
 }
 
 .category:not([disabled]) {
+  height: auto;
   transition-property: height, opacity;
   transition-duration: 1s, 0.8s;
 }
@@ -265,11 +266,9 @@
 }
 #view-port-container:-moz-locale-dir(ltr) {
   -moz-border-left-colors: #dbdbdb #fafafa;
-/*  -moz-border-left-colors: #b8b8b8 #c2c3c2 #d0d1d0 #dfe0df #edeeed;*/
 }
 #view-port-container:-moz-locale-dir(rtl) {
-  -moz-border-right-colors: #fafafa #dbdbdb;
-/*  -moz-border-right-colors: #b8b8b8 #c2c3c2 #d0d1d0 #dfe0df #edeeed;*/
+  -moz-border-right-colors: #dbdbdb #fafafa;
 }
 
 /*** header ***/
@@ -411,6 +410,11 @@
   padding: 4px;
   border-top-color: #dbdbdb;
   border-bottom-color: #dbdbdb;
+}
+
+.view-header button:not(.button-link) {
+  -moz-appearance: button !important;
+  padding: 0 3px !important;
 }
 
 /*** sorters ***/
@@ -1090,23 +1094,19 @@ setting[type="radio"] > radiogroup {
   display: none;
 }
 
-/*
-  #new-userstyle == "Write New Style" (Stylish)
-*/
-#new-userstyle.addon-control {
-  -moz-appearance: button;
-  padding: 0;
-  transition-duration: 0;
-}
 menuitem.addon-control {
   -moz-appearance: menuitem;
   border: none;
+  border-radius: 0;
+  color: MenuText;
   max-width: none;
   opacity: 1;
   padding: 1px 5px;
-  transition-duration: 0;
+  transition-property: none;
 }
 menuitem.addon-control:hover {
+  color: -moz-menuhovertext;
+  background-color: -moz-menuhover;
   border: none !important;
   box-shadow: none !important;
 }
@@ -1129,12 +1129,10 @@ menuitem.addon-control:hover {
 /* Switches */
 
 .addon-control.enable {
-/*  list-style-image: url("moz-icon://stock/gtk-yes?size=button");*/
   list-style-image: url(chrome://mozapps/skin/extensions/off.png);
 }
 
 .addon-control.disable {
-/*  list-style-image: url("moz-icon://stock/gtk-no?size=button");*/
   list-style-image: url(chrome://mozapps/skin/extensions/on.png);
 }
 
@@ -1154,12 +1152,10 @@ button.addon[active="false"] .addon-control.disable{
 }
 
 .addon-control.remove {
-/*  list-style-image: url("moz-icon://stock/gtk-remove?size=button");*/
   list-style-image: url(chrome://symbolic-icons/skin/user-trash.svg);
 }
 
 .addon-control.preferences {
-/*  list-style-image: url("moz-icon://stock/gtk-preferences?size=button");*/
   list-style-image: url(chrome://symbolic-icons/skin/emblem-system.svg);
 }
 
