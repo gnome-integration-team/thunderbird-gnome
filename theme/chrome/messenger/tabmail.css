@@ -154,29 +154,34 @@ tabpanels {
 }
 
 /* In-tab close button */
-.tab-close-button > .toolbarbutton-icon {
-}
 
 .tab-close-button {
   -moz-appearance: none;
-  list-style-image: url(tabmail/close-normal.png);
+  list-style-image: url(chrome://symbolic-icons/skin/close.svg);
   margin: 1px 0;
   -moz-margin-end: -3px;
-  padding: 3px;
+  padding: 0;
   border-radius: 3px;
   border: 1px solid transparent !important;
   box-shadow: none !important;
   z-index: 4;
   -moz-image-region: auto;
 }
+.tab-close-button > .toolbarbutton-icon {
+  filter: url(symbolic-icons-colors.svg#tab-close);
+  opacity: .4;
+}
+
 .tab-close-button:hover {
-  list-style-image: url(tabmail/close-hover.png);
   background: none !important;
   border-color: rgba(0, 0, 0, 0.1) !important;
   box-shadow: none !important;
 }
+.tab-close-button:hover > .toolbarbutton-icon {
+  opacity: 1;
+}
+
 .tab-close-button:active:hover {
-  list-style-image: url(tabmail/close-active.png);
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.13) 1px, rgba(0, 0, 0, 0.08) 2px, rgba(0, 0, 0, 0.07) 100%) !important;
   border-color: rgba(0, 0, 0, 0.12) !important;
   border-top-color: rgba(0, 0, 0, 0.27) !important;
