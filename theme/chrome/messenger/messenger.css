@@ -34,11 +34,11 @@ toolbar:not(#mail-toolbar-menubar2) {
   -moz-appearance: none;
 }
 
-#navigation-toolbox toolbar:not(#mail-toolbar-menubar2):not(#tabs-toolbar) {
-  border-top: 1px solid #a7aba7 !important;
+#navigation-toolbox > toolbar:not(#mail-toolbar-menubar2):not(#tabs-toolbar) {
+  border-top: 1px solid #a7aba7;
 }
-#navigation-toolbox toolbar:not(#mail-toolbar-menubar2):not(#tabs-toolbar)[collapsed="false"] ~ toolbar {
-  border-top: 0 !important;
+#navigation-toolbox > toolbar:not(#mail-toolbar-menubar2):not(#tabs-toolbar)[collapsed="false"] ~ toolbar {
+  border-top: 0;
 }
 
 #tabs-toolbar {
@@ -57,14 +57,14 @@ toolbar:not(#mail-toolbar-menubar2) {
   padding: 0;
 }
 
-#mail-bar3 {
-  background: linear-gradient(to bottom, #fff, #f3f3f3);
-  margin: 0;
-}
-
 #tabbar-toolbar[customizing="true"] {
   min-width: 16px;
   min-height: 10px;
+}
+
+#mail-bar3 {
+  background: linear-gradient(to bottom, #fff, #f3f3f3);
+  margin: 0;
 }
 
 /*
