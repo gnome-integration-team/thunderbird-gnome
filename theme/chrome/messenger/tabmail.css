@@ -321,3 +321,52 @@ tabpanels {
   min-height: 0px;
   padding: 0;
 }
+
+/*Media query for High DPI displays that have the layout.css.devPixelsPerPx setting in about config set to 2 or above*/
+  @media (min-resolution: 2dppx) {
+  .tabmail-tab:not([selected="true"]) > .tab-stack {
+    -moz-border-image: url(tabmail/adwaita-tab@2x.png) 14 16 2 16 fill / 7px 8px 1px 8px stretch;
+  }
+
+  .tabmail-tab[selected="true"] > .tab-stack {
+    -moz-border-image: url(tabmail/adwaita-tab-selected@2x.png) 14 16 2 16 fill / 7px 8px 1px 8px stretch;
+  }
+
+  /* All the tabs after the selected tab (hack) */
+  .tabmail-tabs:not([movingtab]) > .tabmail-tab[selected="true"] ~ .tabmail-tab > .tab-stack {
+    -moz-border-image: url(tabmail/adwaita-tab-right@2x.png) 14 16 2 16 fill / 7px 8px 1px 8px stretch !important;
+  }
+
+  /* All the tabs after the selected tab (hack)
+     (image mirrored for RTL locales) */
+  .tabmail-tabs:not([movingtab]) > .tabmail-tab[selected="true"] ~ .tabmail-tab:-moz-locale-dir(rtl) > .tab-stack {
+    -moz-border-image: url(tabmail/adwaita-tab-right-rtl@2x.png) 14 16 2 16 fill / 7px 8px 1px 8px stretch !important;
+  }
+
+  .tabmail-tabs[overflow] > .tabmail-tab[pinned] + .tabmail-tab:not([pinned]):not([selected="true"]) > .tab-stack,
+  .tabmail-tabs[overflow] > .tabmail-tab[pinned] ~ .tabmail-tab[hidden="true"] + .tabmail-tab:not([hidden="true"]):not([selected="true"]) > .tab-stack {
+    -moz-border-image: url(tabmail/adwaita-tab@2x.png) 14 16 2 16 fill / 7px 8px 1px 8px stretch !important;
+  }
+
+  /* Updated tabs (in the background) */
+  .tabmail-tab[titlechanged]:not([selected="true"]) > .tab-stack {
+    -moz-border-image: url(tabmail/adwaita-tab-new@2x.png) 14 16 2 16 fill / 7px 8px 1px 8px stretch !important;
+  }
+
+  /* All the updated tabs after the selected tab (hack) */
+  .tabmail-tabs:not([movingtab]) > .tabmail-tab[selected="true"] ~ .tabmail-tab[titlechanged] > .tab-stack {
+    -moz-border-image: url(tabmail/adwaita-tab-new-right@2x.png) 14 16 2 16 fill / 7px 8px 1px 8px stretch !important;
+  }
+
+  /* All the updated tabs after the selected tab (hack)
+     (image mirrored for RTL locales) */
+  .tabmail-tabs:not([movingtab]) > .tabmail-tab[selected="true"] ~ .tabmail-tab[titlechanged]:-moz-locale-dir(rtl) > .tab-stack {
+    -moz-border-image: url(tabmail/adwaita-tab-new-right-rtl@2x.png) 14 16 2 16 fill / 7px 8px 1px 8px stretch !important;
+  }
+
+  .tabmail-tabs[overflow] > .tabmail-tab[pinned] + .tabmail-tab:not([pinned])[titlechanged] > .tab-stack,
+  .tabmail-tabs[overflow] > .tabmail-tab[pinned] ~ .tabmail-tab[hidden="true"] + .tabmail-tab:not([hidden="true"])[titlechanged] > .tab-stack {
+    -moz-border-image: url(tabmail/adwaita-tab-new@2x.png) 14 16 2 16 fill / 7px 8px 1px 8px stretch !important;
+  }
+
+}
